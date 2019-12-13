@@ -7,7 +7,7 @@ using TMPro;
 public class Titre_Lieux : MonoBehaviour
 {
 	[SerializeField]
-    private TextMeshProUGUI Texte_Titre;
+    private TextMeshProUGUI Texte_Titre = null;
 	public RawImage BackGround;
 	public Slider Chargement;
 	public string Titre;

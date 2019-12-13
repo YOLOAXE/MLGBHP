@@ -8,10 +8,10 @@ public class LightColorSpawn : MonoBehaviour
     public int colorBoule;
 	public Transform[] BouleSpawn;
 	public Texture[] ImageBoule;
-	private Transform AsingneDstroy;
-	private bool aSpawn,OnStartNoEnable = true,OnDestroy;
-	private GameObject ImageARenplace;
-	private AudioSource m_Audio;
+	private Transform AsingneDstroy = null;
+	private bool aSpawn = false,OnStartNoEnable = true,OnDestroy = false;
+	private GameObject ImageARenplace = null;
+	private AudioSource m_Audio = null;
 	public AudioClip Spawn,DeSpawn;
 		
 	void Start(){
@@ -39,7 +39,7 @@ public class LightColorSpawn : MonoBehaviour
 		}
 		if(Input.GetButtonDown("Lumierre") && !OnDestroy){aSpawn = !aSpawn;}else{return;}
 		if(aSpawn){
-			AsingneDstroy = Instantiate(BouleSpawn[colorBoule],transform.position + new Vector3(0,2,0),Quaternion.EulerAngles(0,0,0));
+			AsingneDstroy = Instantiate(BouleSpawn[colorBoule],transform.position + new Vector3(0,2,0),Quaternion.Euler(0,0,0));
 			SetImageBoule();
 			PlayOneShotSound(Spawn);
 		}else{

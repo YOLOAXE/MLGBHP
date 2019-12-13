@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
 	[SerializeField]
-    private float lifeMax,Curentlife;
+    private float lifeMax = 100f,Curentlife = 100f;
 	public int NBSpawn;
 	private int VarNBSpawn;
 	public RectTransform BarDeVie;
