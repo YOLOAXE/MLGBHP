@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: cd6406e1f12c3ef4fb372fc62c214299
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2527987927047923318
+    second: Coin_Spin_Animation_A_0
+  - first:
+      213: 1916597533562965307
+    second: Coin_Spin_Animation_A_1
+  - first:
+      213: -2323044058506379346
+    second: Coin_Spin_Animation_A_2
+  - first:
+      213: -7138214795269361738
+    second: Coin_Spin_Animation_A_3
+  - first:
+      213: -2794809516446059857
+    second: Coin_Spin_Animation_A_4
+  - first:
+      213: 7017234586786114193
+    second: Coin_Spin_Animation_A_5
+  - first:
+      213: 7672893138383289957
+    second: Coin_Spin_Animation_A_6
+  - first:
+      213: -8570247240625622829
+    second: Coin_Spin_Animation_A_7
+  - first:
+      213: -1514860693044257337
+    second: Coin_Spin_Animation_A_8
+  - first:
+      213: -7176291881437338763
+    second: Coin_Spin_Animation_A_9
+  - first:
+      213: 6833167391539136296
+    second: Coin_Spin_Animation_A_10
+  - first:
+      213: 8426027427360576635
+    second: Coin_Spin_Animation_A_11
+  - first:
+      213: 4985561018401762027
+    second: Coin_Spin_Animation_A_12
+  - first:
+      213: 6315236426688614542
+    second: Coin_Spin_Animation_A_13
+  - first:
+      213: -1797368022126831493
+    second: Coin_Spin_Animation_A_14
+  - first:
+      213: 8792807845252231432
+    second: Coin_Spin_Animation_A_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1605
+        width: 430
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f75d926d8127d4d80648881c1bc8fb
+      internalID: 2527987927047923318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_1
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1613
+        width: 430
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d7a69586ef26d4cbb2de2ea2a16377
+      internalID: 1916597533562965307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_2
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1648
+        width: 430
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b2d94c30daa5b49b8f0c739a763535
+      internalID: -2323044058506379346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_3
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 1705
+        width: 430
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c48354866bd0f4c8981502442af853
+      internalID: -7138214795269361738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1251
+        width: 430
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663e698b3fb73c84da453de4d4ad3747
+      internalID: -2794809516446059857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_5
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1193
+        width: 430
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b579b2cda43fbc1498826cd2f36faf86
+      internalID: 7017234586786114193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_6
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1136
+        width: 430
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa51ee7ebf8473c47b8232d4d7758cea
+      internalID: 7672893138383289957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_7
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 1101
+        width: 430
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf221699cc768c4387c07be0406f3a2
+      internalID: -8570247240625622829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 581
+        width: 430
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12a49c26d429ef4a83bbb673f142948
+      internalID: -1514860693044257337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 589
+        width: 430
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a639dc2929f404fbb2ad9d785bb693
+      internalID: -7176291881437338763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_10
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 624
+        width: 430
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf05ede9b880eb440a45ed2f48b2dad1
+      internalID: 6833167391539136296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_11
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 681
+        width: 430
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3655deb5bb6a74446937c05b88e06f9e
+      internalID: 8426027427360576635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_12
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 227
+        width: 430
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1204dffe5e8b944ac310d1a96faf21
+      internalID: 4985561018401762027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_13
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 169
+        width: 430
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f82d189d0eac240afc36961747fdca
+      internalID: 6315236426688614542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_14
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 112
+        width: 430
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524c8d92f65e48f4b8fab756af207033
+      internalID: -1797368022126831493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_Spin_Animation_A_15
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 77
+        width: 430
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b648622af53fc84790514e847468c0f
+      internalID: 8792807845252231432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7395152a8b2b63543bcd38a0590b4c57
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
