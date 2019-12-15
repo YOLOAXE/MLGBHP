@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedRate: 0.8
+  DistanceOP: 25
+  LightControle: []

@@ -903,7 +903,7 @@ MonoBehaviour:
     type: 3}
   ImpacteAdaptation: {fileID: 3642070313760712665, guid: 493583e99273ec94cac7b18f2a37a9f7,
     type: 3}
-  SondTire: {fileID: 8300000, guid: c2238a2864f6eb144a986c5fa7eca703, type: 3}
+  SondTire: {fileID: 8300000, guid: c556a80ae4c61eb428c78ddf882ac815, type: 3}
   SondNoAmmoTire: {fileID: 8300000, guid: e23b30aa666c2984d8e7808cb1f4ceef, type: 3}
   pointDapparition: {fileID: 5013964888332077283}
   LaserSend: {fileID: 4630385064264074167, guid: 90dfefcf0ef6ff44e8448db7e4e0e6b2,
