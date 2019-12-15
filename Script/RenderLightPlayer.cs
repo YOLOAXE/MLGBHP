@@ -6,22 +6,27 @@ public class RenderLightPlayer : MonoBehaviour
 {
     private GameObject Player = null;
     [SerializeField]
-    private float SpeedRate = 0.8f;
-    public List<GameObject> LightControle = new List<GameObject>();
+    private float SpeedRate = 1f,DistanceOP = 20f;
+    [SerializeField]
+    private GameObject[] LightControle = null;
+    private int i = 0;
 
     void Start()
     {
         Player = GameObject.FindWithTag("player");
         StartCoroutine(LightControl());
-       /* LightControl.Add(new GameObject(GameObject.FindWithTags));*/
     }
 
     IEnumerator LightControl()
     {
         while (true)
         {
-
+            LightControle = GameObject.FindGameObjectsWithTag("LightControl");
             yield return new WaitForSeconds(SpeedRate);
+            for(i = 0;i < LightControle.Length;i++)
+            {
+                LightControle[i].SetActive(DistanceOP < Vector3.Distance(Player.transform.position, LightControle[i].transform.position));
+            }
         }
     }
 }
