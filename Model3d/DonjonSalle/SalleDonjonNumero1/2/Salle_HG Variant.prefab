@@ -136,18 +136,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7937905028414777063, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+    - target: {fileID: 7938722821441035907, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
         type: 3}
-      propertyPath: content.Array.data[18]
-      value: 
-      objectReference: {fileID: 8878127458534663765, guid: 5a4b64e597b23424780c4e781276a011,
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722821440905589, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
         type: 3}
-    - target: {fileID: 7937905028414777063, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722822185972597, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
         type: 3}
-      propertyPath: content.Array.data[19]
-      value: 
-      objectReference: {fileID: 8878127458534663765, guid: 5a4b64e597b23424780c4e781276a011,
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722820342505036, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
         type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722820358123202, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722820701210794, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722820853210403, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938722821040727849, guid: f7f2bf92bedde7f4ba0acd4141aa371e,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7f2bf92bedde7f4ba0acd4141aa371e, type: 3}
 --- !u!1 &4777779138918846752 stripped

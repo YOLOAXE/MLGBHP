@@ -225,6 +225,46 @@ PrefabInstance:
       propertyPath: m_Size
       value: 14.8516035
       objectReference: {fileID: 0}
+    - target: {fileID: 2450494511115890918, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494512002407696, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494512002278118, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494509987816634, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494510301126320, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494510184778553, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494510887099871, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450494510863396177, guid: f8a2d96b72b400841a714d9dd8135c4d,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightControl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a2d96b72b400841a714d9dd8135c4d, type: 3}
 --- !u!1 &7835496781094344620 stripped

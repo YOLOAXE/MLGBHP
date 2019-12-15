@@ -274,6 +274,7 @@ MonoBehaviour:
   salleBossObject:
   - {fileID: 4506572259361002654, guid: b17054a9f962fb441875fa0515ad518b, type: 3}
   SpawnPoint: []
+  LightControl: {fileID: 1133778427}
 --- !u!4 &296960964
 Transform:
   m_ObjectHideFlags: 0
@@ -1029,6 +1030,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1133778427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7244812516380028871, guid: b3e1cdf644eb4f640b9455f7897b98e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2263939298898870803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1143801982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244812516380028870, guid: b3e1cdf644eb4f640b9455f7897b98e5,
+        type: 3}
+      propertyPath: DistanceOP
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3e1cdf644eb4f640b9455f7897b98e5, type: 3}

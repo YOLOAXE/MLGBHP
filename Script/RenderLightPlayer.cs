@@ -11,22 +11,26 @@ public class RenderLightPlayer : MonoBehaviour
     private GameObject[] LightControle = null;
     private int i = 0;
 
-    void Start()
+    public void Generate()
     {
         Player = GameObject.FindWithTag("player");
+        LightControle = GameObject.FindGameObjectsWithTag("LightControl");
         StartCoroutine(LightControl());
+
     }
 
     IEnumerator LightControl()
     {
         while (true)
         {
-            LightControle = GameObject.FindGameObjectsWithTag("LightControl");
-            yield return new WaitForSeconds(SpeedRate);
             for(i = 0;i < LightControle.Length;i++)
             {
-                LightControle[i].SetActive(DistanceOP < Vector3.Distance(Player.transform.position, LightControle[i].transform.position));
+                if (LightControle[i] != null)
+                {
+                    LightControle[i].SetActive(DistanceOP > Vector3.Distance(Player.transform.position, LightControle[i].transform.position));
+                }
             }
+            yield return new WaitForSeconds(SpeedRate);
         }
     }
 }
