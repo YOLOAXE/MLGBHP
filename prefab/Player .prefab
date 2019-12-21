@@ -1159,6 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2990268087460276449}
+  - component: {fileID: 495232751}
   m_Layer: 8
   m_Name: arm_L
   m_TagString: Untagged
@@ -1181,6 +1182,21 @@ Transform:
   m_Father: {fileID: 2990268087939814098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 27.959627, y: 75.482635, z: -106.81843}
+--- !u!114 &495232751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990268087460276450}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc4ded9633343a4ab439ebee8f40753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OriginePos: {x: 0, y: 0, z: 0}
+  Pos: {x: 0, y: 0, z: 0}
+  Arme: {fileID: 2990268087460276450}
 --- !u!1 &2990268087467212554
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,7 +6298,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 182b7f11db452bc458d35a6c9eced06f, type: 3}
   m_Controller: {fileID: 9100000, guid: 425d06488e4cf5d4b92a88cdc9ff35b2, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
