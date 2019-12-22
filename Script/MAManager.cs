@@ -40,6 +40,7 @@ public class MAManager : MonoBehaviour
     [SerializeField] private AudioManage AudioContent = null;
     [SerializeField] private int EmplacementArme = 0; 
     [SerializeField] private Texture[] IConArmeTexture = null;
+    private GameObject ObjectTrigger = null;
 
     public bool OnDialog,OnInventaire;
     void Update()
@@ -48,26 +49,39 @@ public class MAManager : MonoBehaviour
         {
             if(Input.GetButtonDown("Slot0") && EmplacementArme != 0)
             {
-
+                EmplacementArme = 0;
             }
             if(Input.GetButtonDown("Slot1") && EmplacementArme != 1)
             {
-
+                EmplacementArme = 1;
             }
             if(Input.GetButtonDown("Slot2") && EmplacementArme != 2)
             {
-
+                EmplacementArme = 2;
             }
             if(Input.GetButtonDown("Slot3") && EmplacementArme != 3)
             {
-
+                EmplacementArme = 3;
             }
             if(Input.GetButtonDown("Slot4") && EmplacementArme != 4)
             {
-
+                EmplacementArme = 4;
             }
         }
 
 
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
+        {
+            ObjectTrigger = other.transform.gameObject;
+        }
+    }
+
+    void AddObjectSlot()
+    {
+        
     }
 }
