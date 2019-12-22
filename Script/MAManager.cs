@@ -6,32 +6,32 @@ using TMPro;
 [System.Serializable]
 public class Arme
 {
-    [SerializeField] private string Name = "";
-    [SerializeField] private GameObject Spawn = null;
-    [SerializeField] private GameObject ArmeInPlayer = null;
-    [SerializeField] private Vector3 HandPosRechage = new Vector3(0,0,0);
-    [SerializeField] private Vector3 HandPosNormal = new Vector3(0,0,0);
-    [SerializeField] private int IDIconTexture = 0;
-    [SerializeField] private float AttaqueRate = 0f;
-    [SerializeField] private int TypeArme = 0;
-    [SerializeField] private bool ArmeDejaPrisParJoueur = false;
+    public string Name = "";
+    public GameObject Spawn = null;
+    public GameObject ArmeInPlayer = null;
+    public Vector3 HandPosRechage = new Vector3(0,0,0);
+    public Vector3 HandPosNormal = new Vector3(0,0,0);
+    public int IDIconTexture = 0;
+    public float AttaqueRate = 0f;
+    public int TypeArme = 0;
+    public bool ArmeDejaPrisParJoueur = false;
 }
 
 [System.Serializable]
 public class IDArmeEmplacement
 {
-    [SerializeField] private int IDArme;
-    [SerializeField] private int Munition;
-    [SerializeField] private int MunitionMax;
-    [SerializeField] private int Chargeur;
+    public int IDArme = 0;
+    public int Munition = 0;
+    public int MunitionMax = 0;
+    public int Chargeur = 0;
 }
 [System.Serializable]
 public class AudioManage
 {
-    [SerializeField] private AudioSource m_AudioSource = null;
-	[SerializeField] private AudioClip HosterWeapon = null;
-	[SerializeField] private AudioClip TakeWeapon = null;
-	[SerializeField] private AudioClip pickup = null;
+    public AudioSource m_AudioSource = null;
+	public AudioClip HosterWeapon = null;
+	public AudioClip TakeWeapon = null;
+	public AudioClip pickup = null;
 }
 public class MAManager : MonoBehaviour
 {
@@ -77,11 +77,37 @@ public class MAManager : MonoBehaviour
         if(other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
         {
             ObjectTrigger = other.transform.gameObject;
+            AddObjectSlot(ObjectTrigger);
         }
     }
 
-    void AddObjectSlot()
+    void AddObjectSlot(GameObject Arme)
     {
-        
+        int i;
+        for(i = 1;i < 5;i++)
+        {
+            if(IDAE[i].IDArme < 1)
+            {
+                IDAE[i].IDArme = Arme.GetComponent<ArmeLoot_S>().ID;
+                IDAE[i].Munition = Arme.GetComponent<ArmeLoot_S>().Munition;
+                IDAE[i].MunitionMax = Arme.GetComponent<ArmeLoot_S>().MunitionMax;
+                IDAE[i].Chargeur = Arme.GetComponent<ArmeLoot_S>().Chargeur;
+                Destroy(Arme); 
+                i = 5;
+            }
+        }
+    }
+
+    void RemoveArmeSlot(int Slot)
+    {
+        GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, transform.position + new Vector3(0,2,0), Quaternion.Euler(0,0,0));
+        Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
+        Arme.GetComponent<ArmeLoot_S>().Munition = IDAE[Slot].Munition;
+        Arme.GetComponent<ArmeLoot_S>().MunitionMax = IDAE[Slot].MunitionMax;
+        Arme.GetComponent<ArmeLoot_S>().Chargeur = IDAE[Slot].Chargeur;
+        IDAE[Slot].IDArme = 0;
+        IDAE[Slot].Munition = 0;
+        IDAE[Slot].MunitionMax = 0;
+        IDAE[Slot].Chargeur = 0;
     }
 }
