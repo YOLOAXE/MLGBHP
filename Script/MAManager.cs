@@ -12,7 +12,6 @@ public class Arme
     public Vector3 HandPosRechage = new Vector3(0,0,0);
     public Vector3 HandPosNormal = new Vector3(0,0,0);
     public int IDIconTexture = 0;
-    public float AttaqueRate = 0f;
     public int TypeArme = 0;
     public bool ArmeDejaPrisParJoueur = false;
 }
@@ -50,22 +49,27 @@ public class MAManager : MonoBehaviour
             if(Input.GetButtonDown("Slot0") && EmplacementArme != 0)
             {
                 EmplacementArme = 0;
+                AudioPlayOneShot(AudioContent.HosterWeapon);
             }
             if(Input.GetButtonDown("Slot1") && EmplacementArme != 1)
             {
                 EmplacementArme = 1;
+                AudioPlayOneShot(AudioContent.TakeWeapon);
             }
             if(Input.GetButtonDown("Slot2") && EmplacementArme != 2)
             {
                 EmplacementArme = 2;
+                AudioPlayOneShot(AudioContent.TakeWeapon);
             }
             if(Input.GetButtonDown("Slot3") && EmplacementArme != 3)
             {
                 EmplacementArme = 3;
+                AudioPlayOneShot(AudioContent.TakeWeapon);
             }
             if(Input.GetButtonDown("Slot4") && EmplacementArme != 4)
             {
                 EmplacementArme = 4;
+                AudioPlayOneShot(AudioContent.TakeWeapon);
             }
         }
 
@@ -94,6 +98,7 @@ public class MAManager : MonoBehaviour
                 IDAE[i].Chargeur = Arme.GetComponent<ArmeLoot_S>().Chargeur;
                 Destroy(Arme); 
                 i = 5;
+                AudioPlayOneShot(AudioContent.pickup);
             }
         }
     }
@@ -109,6 +114,10 @@ public class MAManager : MonoBehaviour
         IDAE[Slot].Munition = 0;
         IDAE[Slot].MunitionMax = 0;
         IDAE[Slot].Chargeur = 0;
-        
+    }
+    void AudioPlayOneShot(AudioClip Sound)
+    {
+        AudioContent.m_AudioSource.clip = Sound;
+        AudioContent.m_AudioSource.PlayOneShot(AudioContent.m_AudioSource.clip);
     }
 }
