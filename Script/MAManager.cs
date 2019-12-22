@@ -109,5 +109,6 @@ public class MAManager : MonoBehaviour
         IDAE[Slot].Munition = 0;
         IDAE[Slot].MunitionMax = 0;
         IDAE[Slot].Chargeur = 0;
+        
     }
 }
