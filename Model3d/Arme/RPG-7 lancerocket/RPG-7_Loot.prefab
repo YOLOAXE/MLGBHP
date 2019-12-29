@@ -933,7 +933,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 2392690745612749867}
   m_TextComponent: {fileID: 688915411}
   m_materialReferenceIndex: 1
@@ -1102,11 +1102,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7005965958603591834}
-  - component: {fileID: 5360091743351641699}
   - component: {fileID: 5262391712452430999}
   - component: {fileID: 7608387500214931805}
   - component: {fileID: 2309970626584646121}
   - component: {fileID: 2026503955}
+  - component: {fileID: 5633505775877468513}
   m_Layer: 0
   m_Name: RPG-7_Loot
   m_TagString: ArmeLoot
@@ -1131,34 +1131,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &5360091743351641699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6296429423425823369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 13
-  Munition: 1
-  Chargeur: 10
-  MunitionMax: 1
-  ModeRHM: 4
-  CursorId: 14
-  TexteNom: {fileID: 0}
-  TexteMunition: {fileID: 0}
-  TexteMunitionChargeur: {fileID: 0}
-  TexteDegat: {fileID: 0}
-  TexteDPS: {fileID: 0}
-  NomS: 
-  MunitionS: 
-  ChargeurS: 
-  DegatS: 
-  DPSS: 
 --- !u!54 &5262391712452430999
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1215,4 +1187,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Munition: 0
   LootRenderer: {fileID: 2534768448717277876}
-  ScriptVar: {fileID: 5360091743351641699}
+  ScriptVar: {fileID: 5633505775877468513}
+--- !u!114 &5633505775877468513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296429423425823369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0

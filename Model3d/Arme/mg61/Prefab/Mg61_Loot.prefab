@@ -400,9 +400,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2474840413932306565}
   - component: {fileID: 1841116877878313721}
-  - component: {fileID: 2645331910254771785}
   - component: {fileID: 2310914531446842365}
   - component: {fileID: 7380349495728337341}
+  - component: {fileID: 6000688715688327404}
   m_Layer: 0
   m_Name: Mg61_Loot
   m_TagString: ArmeLoot
@@ -440,24 +440,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9999985, y: 1, z: 1.1784384}
   m_Center: {x: -2.008883e-11, y: 0.0000000020120936, z: -0.089219674}
---- !u!114 &2645331910254771785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2472207869896358113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 3
-  Munition: 12
-  Chargeur: 10
-  MunitionMax: 12
-  ModeRHM: 2
-  CursorId: 5
 --- !u!54 &2310914531446842365
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -487,6 +469,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19333349, y: 0.526426, z: 0.7499953}
   m_Center: {x: 0.0169823, y: 0.055321462, z: -0.04900734}
+--- !u!114 &6000688715688327404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472207869896358113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0
 --- !u!1 &2472277654010489915
 GameObject:
   m_ObjectHideFlags: 0

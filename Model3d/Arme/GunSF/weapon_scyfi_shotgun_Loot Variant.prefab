@@ -904,7 +904,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2698424, y: 0.40637416, z: 0.40977275}
   m_Center: {x: -0.27651, y: -0.04228592, z: 0.045578964}
---- !u!114 &7208536318453588206
+--- !u!114 &3279902900418606700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -913,25 +913,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7797471381861658385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 12
-  Munition: 10
+  ID: 0
+  Munition: 0
   Chargeur: 0
   MunitionMax: 0
-  ModeRHM: 1
-  CursorId: 13
-  TexteNom: {fileID: 570651635}
-  TexteMunition: {fileID: 0}
-  TexteMunitionChargeur: {fileID: 0}
-  TexteDegat: {fileID: 0}
-  TexteDPS: {fileID: 0}
-  NomS: Desintegratteur Ionique
-  MunitionS: 
-  ChargeurS: 
-  DegatS: 
-  DPSS: 
 --- !u!1001 &2240474838955996696
 PrefabInstance:
   m_ObjectHideFlags: 0

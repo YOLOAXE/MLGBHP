@@ -6,11 +6,11 @@ public class ArmeVisualCoerance : MonoBehaviour
 {
 	public float Munition = 99;
 	public GameObject LootRenderer;
-	public ArmeLoot ScriptVar;
+	public ArmeLoot_S ScriptVar;
 	
     void Start()
     {
-		ScriptVar = GetComponent<ArmeLoot>();   
+		ScriptVar = GetComponent<ArmeLoot_S>();   
 		Munition = ScriptVar.Munition;
 		LootRenderer.SetActive(Munition > 0); 
     }

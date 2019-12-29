@@ -623,7 +623,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 10, z: 3}
   m_Center: {x: -0.010603897, y: -0.89936376, z: 0.10362812}
---- !u!114 &4125623200324065878
+--- !u!114 &3775317542460621372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -632,15 +632,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7849136276269231267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 8
-  Munition: 20
+  ID: 0
+  Munition: 0
   Chargeur: 0
   MunitionMax: 0
-  ModeRHM: 5
-  CursorId: 10
 --- !u!1 &8483851654688785741
 GameObject:
   m_ObjectHideFlags: 0

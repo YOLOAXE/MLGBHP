@@ -717,9 +717,9 @@ GameObject:
   - component: {fileID: 7281351361659161782}
   - component: {fileID: 7281351361659161785}
   - component: {fileID: 7281351361659161784}
-  - component: {fileID: 7281351361659161787}
   - component: {fileID: 7281351361659161786}
   - component: {fileID: 8865550268872812318}
+  - component: {fileID: 34616787846971876}
   m_Layer: 0
   m_Name: Prefab_Sword_Cyber_Loot
   m_TagString: ArmeLoot
@@ -800,24 +800,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06953733, y: 1.0036714, z: 0.07724928}
   m_Center: {x: -0.000000008636554, y: 0.36505148, z: 5.9298877e-10}
---- !u!114 &7281351361659161787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7281351361659161788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 5
-  Munition: 0
-  Chargeur: 0
-  MunitionMax: 0
-  ModeRHM: 3
-  CursorId: 0
 --- !u!65 &7281351361659161786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -847,6 +829,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &34616787846971876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281351361659161788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0
 --- !u!1 &8714699625906921451
 GameObject:
   m_ObjectHideFlags: 0

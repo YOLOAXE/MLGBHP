@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Mistrailleuse : MonoBehaviour {
+public class Mitrailleuse : MonoBehaviour {
 	
 	public int IDArme;
 	public int munitionMax = 32;
@@ -44,12 +44,6 @@ public class Mistrailleuse : MonoBehaviour {
 		Tire.Stop();
 		AudioclipPlayer = TempTireSond;
 		player = GameObject.FindWithTag("player");
-		player.SendMessage("ReceiveMunition",munition);
-		player.SendMessage("ReceiveMunitionChargeur",munitionChargeur);
-		player.SendMessage("ReceiveMunitionMax",munitionMax);
-		player.SendMessage("ReceiveCanreload",true);
-		player.SendMessage("ReceiveTypeDeRechargement",TypeDeRechargement);
-		player.SendMessage("ReceiveCoupParCoup",CoupParCoup);
 		TempstireVar = Tempstire;
     }
 	
@@ -149,8 +143,5 @@ public class Mistrailleuse : MonoBehaviour {
 	jeComprendPas = false;
 	}
 	public void ReceiveDialogArme(bool dialog){Ondialog = dialog;}
-	public void infoArme(){player.SendMessage("ReceiveMunition",munition);player.SendMessage("ReceiveMunitionChargeur",munitionChargeur);player.SendMessage("ReceiveMunitionMax",munitionMax);player.SendMessage("ReceiveCanreload",true);onReload = false;jeComprendPas = false;player.SendMessage("ReceiveTypeDeRechargement",TypeDeRechargement);player.SendMessage("ReceiveCoupParCoup",CoupParCoup);}
-	public void ReceiveMunition(int Mun){munition = Mun;}
-	public void ReceiveMunitionChargeur(int Munc){munitionChargeur = Munc;}
 	public void ReceiveInventaireState(bool inventaire){OnInventaire = inventaire;}
 }

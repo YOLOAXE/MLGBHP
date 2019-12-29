@@ -396,9 +396,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9096478207425846445}
   - component: {fileID: 5342826173100268782}
-  - component: {fileID: 3505420753813104189}
   - component: {fileID: 2739491324822869173}
   - component: {fileID: 8413200635237293668}
+  - component: {fileID: 5994681816610307260}
   m_Layer: 0
   m_Name: P90__Loot
   m_TagString: ArmeLoot
@@ -438,24 +438,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3505420753813104189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3917896753877908994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 10
-  Munition: 1
-  Chargeur: 0
-  MunitionMax: 0
-  ModeRHM: 1
-  CursorId: 4
 --- !u!65 &2739491324822869173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -482,6 +464,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4464654, y: 0.6045652, z: 1.4140168}
   m_Center: {x: -0.0069766045, y: -0.076750875, z: -0.16737747}
+--- !u!114 &5994681816610307260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3917896753877908994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0
 --- !u!1 &4769944411362385695
 GameObject:
   m_ObjectHideFlags: 0

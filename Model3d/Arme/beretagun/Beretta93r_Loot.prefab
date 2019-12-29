@@ -1543,10 +1543,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5004444457994686650}
-  - component: {fileID: 1823521555639427883}
   - component: {fileID: 5864516561627027471}
   - component: {fileID: 5932429008310617814}
   - component: {fileID: 2060776699877091202}
+  - component: {fileID: 654778185874645607}
   m_Layer: 0
   m_Name: Beretta93r_Loot
   m_TagString: ArmeLoot
@@ -1571,24 +1571,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: -39.537003}
---- !u!114 &1823521555639427883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297884927578661545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 4
-  Munition: 15
-  Chargeur: 15
-  MunitionMax: 15
-  ModeRHM: 2
-  CursorId: 3
 --- !u!65 &5864516561627027471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1631,6 +1613,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.26399, y: 5.0486627, z: 2.070835}
   m_Center: {x: 0.020713398, y: 0.59890795, z: -0.08923551}
+--- !u!114 &654778185874645607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8297884927578661545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0
 --- !u!1 &8352001350429514261
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,10 +6,6 @@ public class RedirectCanvItem : MonoBehaviour
 {
 	public Vector3 TargetPointHaut;
 	public float RotationV;
-    void Start()
-    {
-		
-    }
 
     void Update()
     {

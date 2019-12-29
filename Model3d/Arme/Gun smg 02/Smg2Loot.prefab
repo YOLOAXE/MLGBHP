@@ -2788,7 +2788,7 @@ GameObject:
   - component: {fileID: 7817041777912869088}
   - component: {fileID: 9026565999648924155}
   - component: {fileID: 7063040407415327078}
-  - component: {fileID: 7874808962046229484}
+  - component: {fileID: 7542528579807690468}
   m_Layer: 0
   m_Name: Smg2Loot
   m_TagString: ArmeLoot
@@ -2869,7 +2869,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7874808962046229484
+--- !u!114 &7542528579807690468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2878,15 +2878,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6494454324024083187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
-  Munition: 64
-  Chargeur: 15
-  MunitionMax: 64
-  ModeRHM: 1
-  CursorId: 0
+  ID: 0
+  Munition: 0
+  Chargeur: 0
+  MunitionMax: 0
 --- !u!1 &6748833669951767935
 GameObject:
   m_ObjectHideFlags: 0

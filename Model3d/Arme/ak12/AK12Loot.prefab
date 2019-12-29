@@ -398,9 +398,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1193786448832423725}
   - component: {fileID: 2795178097941550392}
-  - component: {fileID: 2795178097941550393}
   - component: {fileID: 2795178097941550394}
   - component: {fileID: 2202792515548782432}
+  - component: {fileID: 6965701757463993998}
   m_Layer: 0
   m_Name: AK12Loot
   m_TagString: ArmeLoot
@@ -441,34 +441,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2795178097941550393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795178097941550398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 1
-  Munition: 32
-  Chargeur: 15
-  MunitionMax: 32
-  ModeRHM: 1
-  CursorId: 0
-  TexteNom: {fileID: 0}
-  TexteMunition: {fileID: 0}
-  TexteMunitionChargeur: {fileID: 0}
-  TexteDegat: {fileID: 0}
-  TexteDPS: {fileID: 0}
-  NomS: 
-  MunitionS: 
-  ChargeurS: 
-  DegatS: 
-  DPSS: 
 --- !u!65 &2795178097941550394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -495,6 +467,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.659589, y: 3.0996466, z: 1}
   m_Center: {x: 0.1280882, y: 0.025924757, z: -0.00000028567763}
+--- !u!114 &6965701757463993998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2795178097941550398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
+  Munition: 0
+  Chargeur: 10
+  MunitionMax: 32
 --- !u!1 &2947632056585335582
 GameObject:
   m_ObjectHideFlags: 0

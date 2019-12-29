@@ -200,7 +200,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14819257, y: 0.2692312, z: 0.90688837}
   m_Center: {x: 0.020947298, y: 0.025600126, z: -0.027933758}
---- !u!114 &3100322253267067541
+--- !u!114 &8923796035782511002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,15 +209,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2550684227000028212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c3167b3feb3214f98696e12e36083f, type: 3}
+  m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 6
-  Munition: 15
+  ID: 0
+  Munition: 0
   Chargeur: 0
   MunitionMax: 0
-  ModeRHM: 5
-  CursorId: 1
 --- !u!1 &3178194439991433780
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +793,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 8258764759378090369}
   m_TextComponent: {fileID: 6104725878989760906}
   m_materialReferenceIndex: 1
