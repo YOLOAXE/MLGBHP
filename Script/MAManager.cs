@@ -50,7 +50,7 @@ public class MAManager : MonoBehaviour
     [SerializeField] private int EmplacementArme = 0;
     [SerializeField] private Animator Arm_Animator = null;
 
-    private UIArme[] UAM = new UIArme[5];
+    [SerializeField] private UIArme[] UAM = new UIArme[5];
     private GameObject ObjectTrigger = null;
     private int i = 0;
 
