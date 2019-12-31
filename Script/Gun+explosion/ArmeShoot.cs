@@ -23,13 +23,14 @@ public class AudioArme
 public class ArmeShoot : MonoBehaviour
 {
     [Header("Arme")]
-    [SerializeField] private int munitionMax = 0;
-    [SerializeField] private int munition = 0;
-    [SerializeField] private int munitionChargeur = 0;
-    [SerializeField] private float ConsumeMana = 0f;
-    [SerializeField] private float cadence = 0.1f;
-    [SerializeField] private float damage = 0f;
-    [SerializeField] private bool useMana = false;
+    public int munitionMax = 0;
+    public int munition = 0;
+    public int munitionChargeur = 0;
+    public float ConsumeMana = 0f;
+    public float cadence = 0.1f;
+    public float damage = 0f;
+    public bool useMana = false;
+    public bool NoAmmo = false;
     private float cadenceVar = 0;
     [Header("RayCast")]
     [SerializeField] private LayerMask layerAuthoriser = 0;

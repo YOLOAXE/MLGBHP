@@ -5,6 +5,18 @@ using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
+public class ArmeInfoMun
+{
+    public int munition = 0;
+    public int munitionChargeur = 0;
+    public float ConsumeMana = 0f;
+    public float cadence = 0.1f;
+    public float damage = 0f;
+    public bool useMana = false;
+    public bool NoAmmo = false;
+}
+
+[System.Serializable]
 public class UIArme
 {
     public GameObject Emplacement;
@@ -49,10 +61,11 @@ public class MAManager : MonoBehaviour
     [SerializeField] private Texture[] IconArmeTexture = null;
     [SerializeField] private int EmplacementArme = 0;
     [SerializeField] private Animator Arm_Animator = null;
-
     [SerializeField] private UIArme[] UAM = new UIArme[5];
+
+    private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
-    private TextMeshPro AmmoTextMeshPro = null;
+    private TextMeshProUGUI AmmoTextMeshPro = null;
     private int i = 0;
 
     public bool OnDialog,OnInventaire;
@@ -160,7 +173,7 @@ public class MAManager : MonoBehaviour
     {
         Chercher();
         CadreEmplacementMiseAjour();
-        AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TMPro.TextMeshPro>();
+        AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TextMeshProUGUI>();
     }
 
     void ArmeMiseAJour(int i)
@@ -179,10 +192,38 @@ public class MAManager : MonoBehaviour
         Arm_Animator.SetInteger("TypeArme", ArmesContent[IDAE[EmplacementArme].IDArme].TypeArme);
         Arm_Animator.Play("Enter", 0, 0.25f);
         ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(true);
+        if (IDAE[EmplacementArme].IDArme > 0)
+        {
+            AIM.munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
+            AIM.munitionChargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
+            AIM.ConsumeMana = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().ConsumeMana;
+            AIM.cadence = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().cadence;
+            AIM.damage = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().damage;
+            AIM.useMana = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().useMana;
+            AIM.NoAmmo = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().NoAmmo;
+        }
     }
 
     void MunitionTexte()
     {
-        AmmoTextMeshPro.text = "No Ammo";
+        if (IDAE[EmplacementArme].IDArme != 0)
+        {
+            if (AIM.useMana)
+            {
+                AmmoTextMeshPro.text = "-" + AIM.ConsumeMana.ToString() +"MP";
+            }
+            else if(AIM.NoAmmo)
+            {
+                AmmoTextMeshPro.text = "No Ammo";
+            }
+            else
+            {
+                AmmoTextMeshPro.text = AIM.munition.ToString() + " / " + AIM.munitionChargeur.ToString();
+            }
+        }
+        else 
+        {
+            AmmoTextMeshPro.text = "No Ammo";
+        }
     }
 }
