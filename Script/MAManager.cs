@@ -52,14 +52,14 @@ public class MAManager : MonoBehaviour
 
     [SerializeField] private UIArme[] UAM = new UIArme[5];
     private GameObject ObjectTrigger = null;
+    private TextMeshPro AmmoTextMeshPro = null;
     private int i = 0;
 
     public bool OnDialog,OnInventaire;
 
     void Start()
     {
-        Chercher();
-        CadreEmplacementMiseAjour();
+        chercheElment();
     }
 
     void Update()
@@ -70,25 +70,15 @@ public class MAManager : MonoBehaviour
             {
                 if (Input.GetButtonDown("Slot" + i.ToString()) && EmplacementArme != i)
                 {
-                    EmplacementArme = i;
-                    if (i == 0)
-                    {
-                        AudioPlayOneShot(AudioContent.HosterWeapon);
-                    }
-                    else
-                    {
-                        AudioPlayOneShot(AudioContent.TakeWeapon);
-                    }
-                    CadreEmplacementMiseAjour();
-                    Arm_Animator.SetInteger("TypeArme", ArmesContent[IDAE[EmplacementArme].IDArme].TypeArme);
-                    Arm_Animator.Play("Enter", 0, 0.25f);
-
+                    ArmeMiseAJour(i);
                 }
             }
             if(Input.GetButtonDown("Drop"))
             {
                 RemoveArmeSlot(EmplacementArme);
+                ArmeMiseAJour(EmplacementArme);
             }
+            MunitionTexte();     
         }
 
 
@@ -119,10 +109,15 @@ public class MAManager : MonoBehaviour
                 AudioPlayOneShot(AudioContent.pickup);
             }
         }
+        CadreEmplacementMiseAjour();
     }
 
     void RemoveArmeSlot(int Slot)
     {
+        if(IDAE[Slot].IDArme == 0)
+        {
+            return;
+        }
         GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, transform.position + new Vector3(0,2,0), Quaternion.Euler(0,0,0));
         Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
         Arme.GetComponent<ArmeLoot_S>().Munition = IDAE[Slot].Munition;
@@ -132,6 +127,7 @@ public class MAManager : MonoBehaviour
         IDAE[Slot].Munition = 0;
         IDAE[Slot].MunitionMax = 0;
         IDAE[Slot].Chargeur = 0;
+        CadreEmplacementMiseAjour();
     }
 
     void AudioPlayOneShot(AudioClip Sound)
@@ -154,9 +150,39 @@ public class MAManager : MonoBehaviour
     {
         for (i = 0; i < UAM.Length; i++)
         {
-            UAM[i].Emplacement.GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[EmplacementArme].IDArme].IDIconTexture];
+            UAM[i].Emplacement.GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[i].IDArme].IDIconTexture];
             UAM[i].CadreActive.SetActive(EmplacementArme == i);
             UAM[i].CadreDesactive.SetActive(EmplacementArme != i);
         }     
+    }
+
+    void chercheElment()
+    {
+        Chercher();
+        CadreEmplacementMiseAjour();
+        AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TMPro.TextMeshPro>();
+    }
+
+    void ArmeMiseAJour(int i)
+    {
+        ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(false);
+        EmplacementArme = i;
+        if (i == 0)
+        {
+            AudioPlayOneShot(AudioContent.HosterWeapon);
+        }
+        else
+        {
+            AudioPlayOneShot(AudioContent.TakeWeapon);
+        }
+        CadreEmplacementMiseAjour();
+        Arm_Animator.SetInteger("TypeArme", ArmesContent[IDAE[EmplacementArme].IDArme].TypeArme);
+        Arm_Animator.Play("Enter", 0, 0.25f);
+        ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(true);
+    }
+
+    void MunitionTexte()
+    {
+        AmmoTextMeshPro.text = "No Ammo";
     }
 }
