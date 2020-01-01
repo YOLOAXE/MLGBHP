@@ -83,6 +83,7 @@ public class MAManager : MonoBehaviour
             {
                 if (Input.GetButtonDown("Slot" + i.ToString()) && EmplacementArme != i)
                 {
+                    ResetBoolAnimator();
                     ArmeMiseAJour(i);
                 }
             }
@@ -91,6 +92,7 @@ public class MAManager : MonoBehaviour
                 RemoveArmeSlot(EmplacementArme);
                 ArmeMiseAJour(EmplacementArme);
             }
+            GetArmeInfo();
             MunitionTexte();     
         }
 
@@ -225,5 +227,27 @@ public class MAManager : MonoBehaviour
         {
             AmmoTextMeshPro.text = "No Ammo";
         }
+    }
+
+    void GetArmeInfo()
+    {
+        if (IDAE[EmplacementArme].IDArme > 0)
+        {
+            AIM.munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
+            AIM.munitionChargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
+        }
+    }
+
+    void ResetBoolAnimator()
+    {
+        Arm_Animator.SetBool("Inspect",false);
+        Arm_Animator.SetBool("Rechargement", false);
+        Arm_Animator.SetBool("RechargementOutOfAmmo", false);
+        Arm_Animator.SetBool("RechargementOutOfAmmo", false);
+        Arm_Animator.SetBool("Shoot", false);
+        Arm_Animator.SetBool("Holster", false);
+        Arm_Animator.SetBool("Run", false);
+        Arm_Animator.SetBool("Aim", false);
+        Arm_Animator.SetBool("Walk", false);
     }
 }

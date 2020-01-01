@@ -40,8 +40,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208592}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -4814,8 +4814,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208594}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -9618,8 +9618,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208600}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -14392,8 +14392,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208602}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -19172,8 +19172,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208604}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -23946,8 +23946,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835148558046208606}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 1
+  lengthInSec: 0.15
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -29196,26 +29196,28 @@ MonoBehaviour:
   layerAuthoriser:
     serializedVersion: 2
     m_Bits: 7201
-  hitForceTire: 0
+  hitForceTire: 3000
   RayCast: 1
   CoupParCoup: 0
   SpawnProjectile: {fileID: 0}
   pointDapparitionProjectile: {fileID: 0}
   AA:
-    m_AudioSource: {fileID: 0}
+    m_AudioSource: {fileID: 5538769518373312138}
     SondTire: {fileID: 0}
     SondRecharge: {fileID: 0}
     SondRechargeOutofAmmo: {fileID: 0}
     SondNoAmmoTire: {fileID: 0}
   IT: []
   TireParticle: {fileID: 1835148558060600124}
-  tempsDeRechargement: 0
+  tempsDeRechargement: 1
   RechargementState: 0
-  castingBullet: {fileID: 3461105478018055034}
-  pointDapparitionBullet: {fileID: 0}
-  forceCasting: 0
-  angleCasting: {x: 0, y: 0, z: 0}
+  castingBullet: {fileID: 4656228466885897571, guid: c18c6d879489f4d42811f53554575e9e,
+    type: 3}
+  pointDapparitionBullet: {fileID: 3461105478018055029}
+  forceCasting: 200
+  angleCasting: {x: 90, y: 0, z: 0}
   statPlayer: {fileID: 0}
+  Arm_Animator: {fileID: 0}
 --- !u!1 &6792856868813452137
 GameObject:
   m_ObjectHideFlags: 0

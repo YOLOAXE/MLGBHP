@@ -56,6 +56,7 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private float forceCasting = 200f;
     [SerializeField] private Vector3 angleCasting = new Vector3(90f, 0f, 0f);
     [SerializeField] private PlayerStat statPlayer = null;
+    [SerializeField] private Animator Arm_Animator = null;
     private Transform casting = null;
 
     private int i = 0;
@@ -71,7 +72,7 @@ public class ArmeShoot : MonoBehaviour
                     if (RayCast)
                     {
                         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        if (Physics.Raycast(ray, out hit))
+                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                         {
                             if (hit.rigidbody != null)
                             {
@@ -103,15 +104,10 @@ public class ArmeShoot : MonoBehaviour
                         casting.transform.eulerAngles = pointDapparitionBullet.transform.eulerAngles;
                         casting.GetComponent<Rigidbody>().AddForce(-pointDapparitionBullet.transform.forward * forceCasting);
                     }
-                    if (!useMana)
-                    {
-                        munition--;
-                    }
-                    else
-                    {
-                        statPlayer.ReceiveTakeMana(ConsumeMana);
-                    }
+
+                    if (!useMana){munition--;}else{statPlayer.ReceiveTakeMana(ConsumeMana);}
                     if (TireParticle != null) { TireParticle.Play(); }
+
                     PlaySound(AA.SondTire);
                     cadenceVar = cadence;
                 }
@@ -124,7 +120,7 @@ public class ArmeShoot : MonoBehaviour
 
         if (cadenceVar >= 0) { cadenceVar -= Time.deltaTime; }
 
-        if (Input.GetButtonDown("Recharger") && !useMana)
+        if (Input.GetButtonDown("Recharger") && !useMana && munitionChargeur > 0)
         {
             if (munition < munitionMax && !RechargementState)
             {
@@ -139,10 +135,12 @@ public class ArmeShoot : MonoBehaviour
         if(munition > 0)
         {
             PlaySound(AA.SondRecharge);
+            Arm_Animator.SetBool("Rechargement", true);
         }
         else
         {
             PlaySound(AA.SondRechargeOutofAmmo);
+            Arm_Animator.SetBool("RechargementOutOfAmmo", true);
         }
         yield return new WaitForSeconds(tempsDeRechargement);
         if (munitionChargeur >= Mathf.Abs(munition - munitionMax))
