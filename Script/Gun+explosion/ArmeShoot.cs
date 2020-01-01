@@ -109,12 +109,14 @@ public class ArmeShoot : MonoBehaviour
                     if (TireParticle != null) { TireParticle.Play(); }
 
                     PlaySound(AA.SondTire);
+                    Arm_Animator.SetBool("Shoot", true);
                     cadenceVar = cadence;
                 }
             }
             else
             {
                 PlaySound(AA.SondNoAmmoTire);
+                if (cadenceVar < 0) { Arm_Animator.SetBool("Shoot", false); }
             }
         }
 
