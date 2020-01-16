@@ -213,7 +213,7 @@ public class inventaire : MonoBehaviour
 			MenuChange();
 			NomberImageSet();
 			Inventaire.SetActive(OpenInventaire);
-			if(OpenInventaire){Inventaire.SendMessage("SetImage");}
+			//if(OpenInventaire){Inventaire.SendMessage("SetImage");}
 		}
 		if(OpenInventaire)
 		{

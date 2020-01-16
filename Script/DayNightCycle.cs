@@ -50,7 +50,7 @@ public class DayNightCycle : MonoBehaviour
 			RenderSettings.ambientSkyColor = gradiantDay[0];RenderSettings.ambientEquatorColor = gradiantDay[1];RenderSettings.ambientGroundColor = gradiantDay[2];
 		}
 		FonduAuNoire = GameObject.FindWithTag("FonduAuNoire");
-		AnimationFondu = FonduAuNoire.GetComponent<Animator>();
+        if (FonduAuNoire != null) { AnimationFondu = FonduAuNoire.GetComponent<Animator>(); }
 		SendInfo = GameObject.FindGameObjectsWithTag("PNJ") ;
     }
 

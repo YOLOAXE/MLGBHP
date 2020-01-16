@@ -58,83 +58,94 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private PlayerStat statPlayer = null;
     [SerializeField] private Animator Arm_Animator = null;
     private Transform casting = null;
+    public bool OnAction = false;
 
     private int i = 0;
 
     void Update()
     {
-        if (Input.GetButton("Fire1") && !RechargementState && cadenceVar < 0)
+        if (!OnAction)
         {
-            if ((munition > 0 || useMana) && (statPlayer.ManaJoueur >= ConsumeMana || !useMana))
+            if (Input.GetButton("Fire1") && !RechargementState && cadenceVar < 0)
             {
-                if (Input.GetButtonDown("Fire1") || !CoupParCoup) /*CoupParCoup*/
+                if ((munition > 0 || useMana) && (statPlayer.ManaJoueur >= ConsumeMana || !useMana))
                 {
-                    if (RayCast)
+                    if (Input.GetButtonDown("Fire1") || !CoupParCoup) /*CoupParCoup*/
                     {
-                        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
+                        if (RayCast)
                         {
-                            if (hit.rigidbody != null)
+                            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                             {
-                                hit.rigidbody.AddForce(ray.direction * hitForceTire);
-                            }
-                            for (i = 0; i < IT.Length; i++)
-                            {
-                                if (hit.transform.tag == IT[i].tagName)
+                                if (hit.rigidbody != null)
                                 {
-                                    Reasigneparent = Instantiate(IT[i].ImpactSpawn, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                                    Reasigneparent.parent = hit.transform.parent;
-                                    Reasigneparent.localScale = new Vector3(1, 1, 1);
-                                    if (IT[i].SendDegat)
+                                    hit.rigidbody.AddForce(ray.direction * hitForceTire);
+                                }
+                                for (i = 0; i < IT.Length; i++)
+                                {
+                                    if (hit.transform.tag == IT[i].tagName)
                                     {
-                                        hit.collider.gameObject.SendMessage("ReceiveDamagePlayer", damage);
+                                        Reasigneparent = Instantiate(IT[i].ImpactSpawn, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                                        Reasigneparent.parent = hit.transform.parent;
+                                        Reasigneparent.localScale = new Vector3(1, 1, 1);
+                                        if (IT[i].SendDegat)
+                                        {
+                                            hit.collider.gameObject.SendMessage("ReceiveDamagePlayer", damage);
+                                        }
+                                        i = IT.Length;
                                     }
-                                    i = IT.Length;
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        Instantiate(SpawnProjectile, pointDapparitionProjectile.transform.position, Quaternion.identity);
-                    }
-                    if (castingBullet != null)
-                    {
-                        casting = Instantiate(castingBullet, pointDapparitionBullet.transform.position, Quaternion.Euler(angleCasting));
-                        casting.transform.eulerAngles = pointDapparitionBullet.transform.eulerAngles;
-                        casting.GetComponent<Rigidbody>().AddForce(-pointDapparitionBullet.transform.forward * forceCasting);
-                    }
+                        else
+                        {
+                            Instantiate(SpawnProjectile, pointDapparitionProjectile.transform.position, Quaternion.identity);
+                        }
+                        if (castingBullet != null)
+                        {
+                            casting = Instantiate(castingBullet, pointDapparitionBullet.transform.position, Quaternion.Euler(angleCasting));
+                            casting.transform.eulerAngles = pointDapparitionBullet.transform.eulerAngles;
+                            casting.GetComponent<Rigidbody>().AddForce(-pointDapparitionBullet.transform.forward * forceCasting);
+                        }
 
-                    if (!useMana){munition--;}else{statPlayer.ReceiveTakeMana(ConsumeMana);}
-                    if (TireParticle != null) { TireParticle.Play(); }
+                        if (!useMana) { munition--; } else { statPlayer.ReceiveTakeMana(ConsumeMana); }
+                        if (TireParticle != null) { TireParticle.Play(); }
 
-                    PlaySound(AA.SondTire);
-                    Arm_Animator.SetBool("Shoot", true);
-                    cadenceVar = cadence;
+                        PlaySound(AA.SondTire);
+                        Arm_Animator.SetBool("Shoot", true);
+                        cadenceVar = cadence;
+                    }
+                }
+                else
+                {
+                    PlaySound(AA.SondNoAmmoTire);
+                    if (cadenceVar < 0) { Arm_Animator.SetBool("Shoot", false); }
                 }
             }
             else
             {
-                PlaySound(AA.SondNoAmmoTire);
-                if (cadenceVar < 0) { Arm_Animator.SetBool("Shoot", false); }
+                if (cadenceVar < 0) { Arm_Animator.SetBool("Shoot", false); } // pas Opti !!! 
             }
-        }
 
-        if (cadenceVar >= 0) { cadenceVar -= Time.deltaTime; }
+            if (cadenceVar >= 0) { cadenceVar -= Time.deltaTime; }
 
-        if (Input.GetButtonDown("Recharger") && !useMana && munitionChargeur > 0)
-        {
-            if (munition < munitionMax && !RechargementState)
+            if (Input.GetButtonDown("Recharger") && !useMana && munitionChargeur > 0)
             {
-                StartCoroutine(Rechargement());
+                if (munition < munitionMax && !RechargementState)
+                {
+                    StartCoroutine(Rechargement());
+                }
             }
+
+            // Animation
+            Arm_Animator.SetBool("Aim", Input.GetButton("Fire2"));
         }
     }
 
     IEnumerator Rechargement()
     {
         RechargementState = true;
-        if(munition > 0)
+        if (munition > 0)
         {
             PlaySound(AA.SondRecharge);
             Arm_Animator.SetBool("Rechargement", true);
@@ -166,5 +177,4 @@ public class ArmeShoot : MonoBehaviour
             AA.m_AudioSource.PlayOneShot(AA.m_AudioSource.clip);
         }
     }
-
 }

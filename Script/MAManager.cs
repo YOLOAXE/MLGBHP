@@ -103,6 +103,7 @@ public class MAManager : MonoBehaviour
     {
         if(other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
         {
+            if(!other.GetComponent<ArmeLoot_S>().canTake){return;} // si le l'object vien juste d'apparetre.
             ObjectTrigger = other.transform.gameObject;
             AddObjectSlot(ObjectTrigger);
         }
@@ -119,7 +120,9 @@ public class MAManager : MonoBehaviour
                 IDAE[i].Munition = Arme.GetComponent<ArmeLoot_S>().Munition;
                 IDAE[i].MunitionMax = Arme.GetComponent<ArmeLoot_S>().MunitionMax;
                 IDAE[i].Chargeur = Arme.GetComponent<ArmeLoot_S>().Chargeur;
-                Destroy(Arme); 
+                Destroy(Arme);
+                ResetBoolAnimator();
+                ArmeMiseAJour(i);
                 i = 5;
                 AudioPlayOneShot(AudioContent.pickup);
             }
@@ -249,5 +252,39 @@ public class MAManager : MonoBehaviour
         Arm_Animator.SetBool("Run", false);
         Arm_Animator.SetBool("Aim", false);
         Arm_Animator.SetBool("Walk", false);
+    }
+
+    public void ReceiveDialogState(bool OD)
+    {
+        OnDialog = OD;
+        if (IDAE[EmplacementArme].IDArme > 0)
+        {
+            if (ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer != null)
+            {
+                if (ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.activeSelf)
+                {
+                    ResetBoolAnimator();
+                    Arm_Animator.SetBool("Holster", OnDialog);
+                    ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().OnAction = OnDialog;
+                }
+            }
+        }
+    }
+
+    public void ReceiveInventaireState(bool OI)
+    {
+        OnInventaire = OI;
+        if (IDAE[EmplacementArme].IDArme > 0)
+        {
+            if (ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer != null)
+            {
+                if (ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.activeSelf)
+                {
+                    ResetBoolAnimator();
+                    Arm_Animator.SetBool("Holster", OnInventaire);
+                    ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().OnAction = OnInventaire;
+                }
+            }
+        }
     }
 }
