@@ -59,6 +59,7 @@ public class MAManager : MonoBehaviour
     [SerializeField] private Arme[] ArmesContent = null;
     [SerializeField] private AudioManage AudioContent = null; 
     [SerializeField] private Texture[] IconArmeTexture = null;
+    [SerializeField] private GameObject[] ArmeObject = null;
     [SerializeField] private int EmplacementArme = 0;
     [SerializeField] private Animator Arm_Animator = null;
     [SerializeField] private UIArme[] UAM = new UIArme[5];
@@ -171,7 +172,11 @@ public class MAManager : MonoBehaviour
             UAM[i].Emplacement.GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[i].IDArme].IDIconTexture];
             UAM[i].CadreActive.SetActive(EmplacementArme == i);
             UAM[i].CadreDesactive.SetActive(EmplacementArme != i);
-        }     
+        }  
+        for(i = 0; i < ArmeObject.Length;i++)
+        {
+            ArmeObject[i].SetActive(ArmesContent[IDAE[i].IDArme].IDIconTexture == i);
+        }
     }
 
     void chercheElment()

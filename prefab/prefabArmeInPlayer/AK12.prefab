@@ -29009,7 +29009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6e5bf936f747740a66e68ebe71d71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6359112244056188615, guid: 72197dcb4f9694d42859f4302e180442, type: 3}
 --- !u!1 &5290018994739590975
 GameObject:
   m_ObjectHideFlags: 0
@@ -29058,7 +29058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8829008349869761690
 Transform:
   m_ObjectHideFlags: 0
@@ -29189,7 +29189,7 @@ MonoBehaviour:
   munition: 32
   munitionChargeur: 64
   ConsumeMana: 0
-  cadence: 0.1
+  cadence: 0.2
   damage: 10
   useMana: 0
   NoAmmo: 0
@@ -29201,23 +29201,71 @@ MonoBehaviour:
   CoupParCoup: 0
   SpawnProjectile: {fileID: 0}
   pointDapparitionProjectile: {fileID: 0}
+  tempsSpawn: 1.5
   AA:
     m_AudioSource: {fileID: 5538769518373312138}
     SondTire: {fileID: 0}
     SondRecharge: {fileID: 0}
     SondRechargeOutofAmmo: {fileID: 0}
     SondNoAmmoTire: {fileID: 0}
-  IT: []
+  IT:
+  - tagName: Untagged
+    ImpactSpawn: {fileID: 4349486593853952272, guid: a1211dcf9f6f6d5408760192b374d556,
+      type: 3}
+    SendDegat: 0
+  - tagName: Metal
+    ImpactSpawn: {fileID: 6911045050766514297, guid: 3d9f7e77e71bc6949be2d77d854e48b0,
+      type: 3}
+    SendDegat: 0
+  - tagName: Terre
+    ImpactSpawn: {fileID: 563967255572719766, guid: 0ee52d5a4ae0b464f828e78e52048853,
+      type: 3}
+    SendDegat: 0
+  - tagName: Neige
+    ImpactSpawn: {fileID: 563967255572719766, guid: 0ee52d5a4ae0b464f828e78e52048853,
+      type: 3}
+    SendDegat: 0
+  - tagName: Bois
+    ImpactSpawn: {fileID: 4356871798808297404, guid: 94d1292cb91f70940973adc832f50a97,
+      type: 3}
+    SendDegat: 0
+  - tagName: Sable
+    ImpactSpawn: {fileID: 3176114912289801439, guid: da154104372311f41bef272d62096169,
+      type: 3}
+    SendDegat: 0
+  - tagName: Beton
+    ImpactSpawn: {fileID: 7444263352178525089, guid: 57759f2f4d716de47b79bb05615fdb74,
+      type: 3}
+    SendDegat: 0
+  - tagName: Enemie
+    ImpactSpawn: {fileID: 943841133877238897, guid: e4200c5182873f642a010b63b67d1121,
+      type: 3}
+    SendDegat: 1
+  - tagName: EnemiePierre
+    ImpactSpawn: {fileID: 943841133877238897, guid: e172210a9af550f4da464d6e3a8b23cc,
+      type: 3}
+    SendDegat: 1
+  - tagName: EnemieBleu
+    ImpactSpawn: {fileID: 2828300666036056487, guid: 9be884f6ad86a86498701c38cec63888,
+      type: 3}
+    SendDegat: 0
+  - tagName: EnemieVert
+    ImpactSpawn: {fileID: 4963600171336509262, guid: abf8339f83740364397cf41e45a36e76,
+      type: 3}
+    SendDegat: 0
+  TailleImpactMinMax: {x: 1.2, y: 1.8}
   TireParticle: {fileID: 1835148558060600124}
-  tempsDeRechargement: 1
+  tempsDeRechargement: 2
   RechargementState: 0
   castingBullet: {fileID: 4656228466885897571, guid: c18c6d879489f4d42811f53554575e9e,
     type: 3}
   pointDapparitionBullet: {fileID: 3461105478018055029}
   forceCasting: 200
+  TailleBullet: 1.2
   angleCasting: {x: 90, y: 0, z: 0}
   statPlayer: {fileID: 0}
   Arm_Animator: {fileID: 0}
+  OnAction: 0
 --- !u!1 &6792856868813452137
 GameObject:
   m_ObjectHideFlags: 0
@@ -29384,7 +29432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6e5bf936f747740a66e68ebe71d71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 7700316647878923222, guid: 72197dcb4f9694d42859f4302e180442, type: 3}
 --- !u!1 &8894301597106213105
 GameObject:
   m_ObjectHideFlags: 0
