@@ -30,8 +30,8 @@ public class Arme
     public string Name = "";
     public GameObject Spawn = null;
     public GameObject ArmeInPlayer = null;
-    public Vector3 HandPosRechage = new Vector3(0,0,0);
-    public Vector3 HandPosNormal = new Vector3(0,0,0);
+    public Vector3 HandPos = new Vector3(0,0,0);
+    public Vector3 HandAngle = new Vector3(0,0,0);
     public int IDIconTexture = 0;
     public int TypeArme = 0;
     public bool ArmeDejaPrisParJoueur = false;
@@ -63,6 +63,10 @@ public class MAManager : MonoBehaviour
     [SerializeField] private int EmplacementArme = 0;
     [SerializeField] private Animator Arm_Animator = null;
     [SerializeField] private UIArme[] UAM = new UIArme[5];
+    [SerializeField] private GameObject SpawnArmePoint = null;
+    [SerializeField] private float ForceImpulseArme = 1f;
+    [SerializeField] private Vector3 HandPos = new Vector3(0, -0.135f, 0.24f);
+    [SerializeField] private Vector3 HandAngle = new Vector3(-5.44f, -1.44f, 0);
 
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
@@ -137,7 +141,8 @@ public class MAManager : MonoBehaviour
         {
             return;
         }
-        GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, transform.position + new Vector3(0,2,0), Quaternion.Euler(0,0,0));
+        ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(false);
+        GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, SpawnArmePoint.transform.position, Quaternion.Euler(transform.GetChild(0).eulerAngles));
         Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
         Arme.GetComponent<ArmeLoot_S>().Munition = IDAE[Slot].Munition;
         Arme.GetComponent<ArmeLoot_S>().MunitionMax = IDAE[Slot].MunitionMax;
@@ -146,6 +151,7 @@ public class MAManager : MonoBehaviour
         IDAE[Slot].Munition = 0;
         IDAE[Slot].MunitionMax = 0;
         IDAE[Slot].Chargeur = 0;
+        Arme.GetComponent<Rigidbody>().AddForce(transform.GetChild(0).forward * ForceImpulseArme, ForceMode.Impulse);
         CadreEmplacementMiseAjour();
     }
 
@@ -175,7 +181,7 @@ public class MAManager : MonoBehaviour
         }  
         for(i = 0; i < ArmeObject.Length;i++)
         {
-            ArmeObject[i].SetActive(ArmesContent[IDAE[i].IDArme].IDIconTexture == i);
+            ArmeObject[i].SetActive(ArmesContent[IDAE[EmplacementArme].IDArme].IDIconTexture == i);
         }
     }
 

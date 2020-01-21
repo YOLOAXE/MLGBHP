@@ -7,6 +7,7 @@ public class ImpactTire
 {
     public string tagName;
     public Transform ImpactSpawn;
+    public bool sticky;
     public bool SendDegat;
 }
 
@@ -37,6 +38,8 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private float hitForceTire = 0;
     [SerializeField] private bool RayCast = true;
     [SerializeField] private bool CoupParCoup = false;
+    [SerializeField] private float Z = 10;
+    [SerializeField] private float scale = 0.1f;
     private RaycastHit hit;
     private Ray ray;
     [Header("Spawn")]
@@ -65,6 +68,7 @@ public class ArmeShoot : MonoBehaviour
 
     private int i = 0;
     private bool ParticleLoop = false;
+    private GameObject MainCamera = null;
 
     void Start()
     {
@@ -72,6 +76,7 @@ public class ArmeShoot : MonoBehaviour
         {
             RHP(TireParticle.transform.gameObject);
         }
+        MainCamera = GameObject.FindWithTag("MainCamera");
     }
 
     void OnEnable()
@@ -91,9 +96,13 @@ public class ArmeShoot : MonoBehaviour
                     {
                         if (RayCast)
                         {
-                            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                            Vector3 direction = Random.insideUnitCircle * scale;
+                            direction.z = Z;
+                            direction = MainCamera.transform.TransformDirection(direction.normalized);
+                            ray = new Ray(MainCamera.transform.position, direction);
                             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                             {
+                                Debug.DrawLine(transform.position, hit.point);
                                 if (hit.rigidbody != null)
                                 {
                                     hit.rigidbody.AddForce(ray.direction * hitForceTire);
@@ -104,7 +113,10 @@ public class ArmeShoot : MonoBehaviour
                                     {
                                         Reasigneparent = Instantiate(IT[i].ImpactSpawn, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
                                         Reasigneparent.localScale = new Vector3(1f,1f,1f) * Random.Range(TailleImpactMinMax.x,TailleImpactMinMax.y);
-                                        Reasigneparent.parent = hit.transform.parent;
+                                        if (IT[i].sticky)
+                                        {
+                                            Reasigneparent.SetParent(hit.transform);
+                                        }
                                         if (IT[i].SendDegat)
                                         {
                                             hit.collider.gameObject.SendMessage("ReceiveDamagePlayer", damage);
