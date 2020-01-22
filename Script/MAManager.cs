@@ -65,8 +65,6 @@ public class MAManager : MonoBehaviour
     [SerializeField] private UIArme[] UAM = new UIArme[5];
     [SerializeField] private GameObject SpawnArmePoint = null;
     [SerializeField] private float ForceImpulseArme = 1f;
-    [SerializeField] private Vector3 HandPos = new Vector3(0, -0.135f, 0.24f);
-    [SerializeField] private Vector3 HandAngle = new Vector3(-5.44f, -1.44f, 0);
 
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
@@ -102,6 +100,12 @@ public class MAManager : MonoBehaviour
         }
 
 
+    }
+
+    void LateUpdate()
+    {
+        Arm_Animator.transform.localPosition = ArmesContent[IDAE[EmplacementArme].IDArme].HandPos;
+        Arm_Animator.transform.localEulerAngles = ArmesContent[IDAE[EmplacementArme].IDArme].HandAngle;
     }
 
     void OnTriggerStay(Collider other)
@@ -183,6 +187,8 @@ public class MAManager : MonoBehaviour
         {
             ArmeObject[i].SetActive(ArmesContent[IDAE[EmplacementArme].IDArme].IDIconTexture == i);
         }
+        Arm_Animator.transform.localPosition = ArmesContent[IDAE[EmplacementArme].IDArme].HandPos;
+        Arm_Animator.transform.localEulerAngles = ArmesContent[IDAE[EmplacementArme].IDArme].HandAngle;
     }
 
     void chercheElment()

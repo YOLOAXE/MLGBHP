@@ -40,6 +40,8 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private bool CoupParCoup = false;
     [SerializeField] private float Z = 10;
     [SerializeField] private float scale = 0.1f;
+    [SerializeField] private GameObject SpawnBalleRay = null;
+    [SerializeField] private float SpeedBulletRay = 1f;
     private RaycastHit hit;
     private Ray ray;
     [Header("Spawn")]
@@ -103,6 +105,10 @@ public class ArmeShoot : MonoBehaviour
                             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                             {
                                 Debug.DrawLine(transform.position, hit.point);
+                                if(SpawnBalleRay != null)
+                                {
+                                    StartCoroutine(Trajectoire(Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.identity),hit.point));
+                                }
                                 if (hit.rigidbody != null)
                                 {
                                     hit.rigidbody.AddForce(ray.direction * hitForceTire);
@@ -175,7 +181,19 @@ public class ArmeShoot : MonoBehaviour
 
             // Animation
             Arm_Animator.SetBool("Aim", Input.GetButton("Fire2"));
+            Arm_Animator.SetBool("Walk", !Input.GetButton("Sprint") && (Input.GetButton("Horizontal") || Input.GetButton("Vertical")));
+            Arm_Animator.SetBool("Run", Input.GetButton("Sprint") && (Input.GetButton("Horizontal") || Input.GetButton("Vertical")));
         }
+    }
+
+    IEnumerator Trajectoire(GameObject SRB,Vector3 destination)
+    {
+        while (SRB.transform.position != destination)
+        {
+             SRB.transform.position = Vector3.MoveTowards(SRB.transform.position, destination, Time.deltaTime * SpeedBulletRay);
+            yield return new WaitForSeconds(0.01f);
+        }
+        Destroy(SRB,5);
     }
 
     IEnumerator Rechargement()
