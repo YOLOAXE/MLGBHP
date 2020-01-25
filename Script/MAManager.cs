@@ -36,10 +36,9 @@ public class Arme
     public int TypeArme = 0;
     public bool ArmeDejaPrisParJoueur = false;
     public bool AsRifle = false, AsMelee = false, AsHandGun = false;
-    public bool BrasDroiteBlock = false;
-    public bool BrasGaucheBlock = false;
-    public float DB = 0f;
-    public float GB = 0f;
+    public Vector3 DB = new Vector3(0, 0, 0);
+    public Vector3 GB = new Vector3(0, 0, 0);
+    public Vector3 GBRechagement = new Vector3(0, 0, 0);
 }
 
 [System.Serializable]
@@ -73,6 +72,8 @@ public class MAManager : MonoBehaviour
     [SerializeField] private float ForceImpulseArme = 1f;
     [SerializeField] private StrafeMovement SM = null;
     [Header("Bras")]
+    [SerializeField] private GameObject BrasGauche = null;
+    [SerializeField] private GameObject BrasDroite = null;
 
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
@@ -114,14 +115,8 @@ public class MAManager : MonoBehaviour
     {
         Arm_Animator.transform.localPosition = ArmesContent[IDAE[EmplacementArme].IDArme].HandPos;
         Arm_Animator.transform.localEulerAngles = ArmesContent[IDAE[EmplacementArme].IDArme].HandAngle;
-        if(ArmesContent[IDAE[EmplacementArme].IDArme].BrasDroiteBlock)
-        {
-
-        }
-        if (ArmesContent[IDAE[EmplacementArme].IDArme].BrasGaucheBlock)
-        {
-
-        }
+        BrasDroite.transform.localPosition = BrasDroite.transform.localPosition + ArmesContent[IDAE[EmplacementArme].IDArme].DB;
+        BrasGauche.transform.localPosition = BrasGauche.transform.localPosition + ArmesContent[IDAE[EmplacementArme].IDArme].GB;
     }
 
     void OnTriggerStay(Collider other)
