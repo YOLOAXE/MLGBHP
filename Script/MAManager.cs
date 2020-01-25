@@ -35,6 +35,11 @@ public class Arme
     public int IDIconTexture = 0;
     public int TypeArme = 0;
     public bool ArmeDejaPrisParJoueur = false;
+    public bool AsRifle = false, AsMelee = false, AsHandGun = false;
+    public bool BrasDroiteBlock = false;
+    public bool BrasGaucheBlock = false;
+    public float DB = 0f;
+    public float GB = 0f;
 }
 
 [System.Serializable]
@@ -55,6 +60,7 @@ public class AudioManage
 }
 public class MAManager : MonoBehaviour
 {
+    [Header("Manager")]
     [SerializeField] private IDArmeEmplacement[] IDAE = new IDArmeEmplacement[5];
     [SerializeField] private Arme[] ArmesContent = null;
     [SerializeField] private AudioManage AudioContent = null; 
@@ -65,6 +71,8 @@ public class MAManager : MonoBehaviour
     [SerializeField] private UIArme[] UAM = new UIArme[5];
     [SerializeField] private GameObject SpawnArmePoint = null;
     [SerializeField] private float ForceImpulseArme = 1f;
+    [SerializeField] private StrafeMovement SM = null;
+    [Header("Bras")]
 
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
@@ -106,6 +114,14 @@ public class MAManager : MonoBehaviour
     {
         Arm_Animator.transform.localPosition = ArmesContent[IDAE[EmplacementArme].IDArme].HandPos;
         Arm_Animator.transform.localEulerAngles = ArmesContent[IDAE[EmplacementArme].IDArme].HandAngle;
+        if(ArmesContent[IDAE[EmplacementArme].IDArme].BrasDroiteBlock)
+        {
+
+        }
+        if (ArmesContent[IDAE[EmplacementArme].IDArme].BrasGaucheBlock)
+        {
+
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -121,14 +137,39 @@ public class MAManager : MonoBehaviour
     void AddObjectSlot(GameObject Arme)
     {
         int i;
-        for(i = 1;i < 5;i++)
+        for (i = 1; i < 5; i++)
         {
-            if(IDAE[i].IDArme < 1)
+            if (IDAE[i].IDArme == Arme.GetComponent<ArmeLoot_S>().ID)// si le joueur possede deja l'arme.
+            {
+                if (ArmesContent[IDAE[i].IDArme].ArmeInPlayer.activeSelf)
+                {
+                    ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition += Arme.GetComponent<ArmeLoot_S>().Munition;
+                    ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur += Arme.GetComponent<ArmeLoot_S>().Chargeur;
+                    IDAE[i].Munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
+                    IDAE[i].Chargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
+                }
+                else
+                {
+                    ObjectTrigger = null;
+                    return;
+                }
+                Destroy(Arme);
+                AudioPlayOneShot(AudioContent.pickup);
+                return;
+            }
+        }
+        for (i = 1;i < 5;i++)
+        {
+            if(IDAE[i].IDArme < 1)// si le joueur possede un emplacement vide.
             {
                 IDAE[i].IDArme = Arme.GetComponent<ArmeLoot_S>().ID;
                 IDAE[i].Munition = Arme.GetComponent<ArmeLoot_S>().Munition;
                 IDAE[i].MunitionMax = Arme.GetComponent<ArmeLoot_S>().MunitionMax;
                 IDAE[i].Chargeur = Arme.GetComponent<ArmeLoot_S>().Chargeur;
+                ArmesContent[IDAE[i].IDArme].ArmeInPlayer.SetActive(true);
+                ArmesContent[IDAE[i].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition = IDAE[i].Munition;
+                ArmesContent[IDAE[i].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur = IDAE[i].Chargeur;
+                ArmesContent[IDAE[i].IDArme].ArmeInPlayer.SetActive(false);
                 Destroy(Arme);
                 ResetBoolAnimator();
                 ArmeMiseAJour(i);
@@ -148,9 +189,9 @@ public class MAManager : MonoBehaviour
         ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(false);
         GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, SpawnArmePoint.transform.position, Quaternion.Euler(transform.GetChild(0).eulerAngles));
         Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
-        Arme.GetComponent<ArmeLoot_S>().Munition = IDAE[Slot].Munition;
-        Arme.GetComponent<ArmeLoot_S>().MunitionMax = IDAE[Slot].MunitionMax;
-        Arme.GetComponent<ArmeLoot_S>().Chargeur = IDAE[Slot].Chargeur;
+        Arme.GetComponent<ArmeLoot_S>().Munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
+        Arme.GetComponent<ArmeLoot_S>().MunitionMax = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionMax;
+        Arme.GetComponent<ArmeLoot_S>().Chargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
         IDAE[Slot].IDArme = 0;
         IDAE[Slot].Munition = 0;
         IDAE[Slot].MunitionMax = 0;
@@ -189,6 +230,9 @@ public class MAManager : MonoBehaviour
         }
         Arm_Animator.transform.localPosition = ArmesContent[IDAE[EmplacementArme].IDArme].HandPos;
         Arm_Animator.transform.localEulerAngles = ArmesContent[IDAE[EmplacementArme].IDArme].HandAngle;
+        SM.AsRifle = ArmesContent[IDAE[EmplacementArme].IDArme].AsRifle;
+        SM.AsMelee = ArmesContent[IDAE[EmplacementArme].IDArme].AsMelee;
+        SM.AsHandGun = ArmesContent[IDAE[EmplacementArme].IDArme].AsHandGun;
     }
 
     void chercheElment()

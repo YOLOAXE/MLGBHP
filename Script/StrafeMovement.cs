@@ -45,7 +45,7 @@ public class StrafeMovement : MonoBehaviour
     private bool animeSaut = false;
     private bool Crouchanim = false;
     private float TransitionAcroupie = 0f;
-    [SerializeField] private bool AsRifle = false, AsMelee = false, AsHandGun = false;
+    public bool AsRifle = false, AsMelee = false, AsHandGun = false;
     [SerializeField] private float fps = 0;
     [SerializeField] private bool OnDialog = false;
     private AudioSource m_AudioSource = null;
@@ -357,9 +357,6 @@ public class StrafeMovement : MonoBehaviour
         sfs_FootstepSounds[Id_FootstepSounds].m_FootstepSounds[n] = sfs_FootstepSounds[Id_FootstepSounds].m_FootstepSounds[0];
         sfs_FootstepSounds[Id_FootstepSounds].m_FootstepSounds[0] = m_AudioSource.clip;
     }
-    public void AUneArmeDeTypeRifle(bool asRifle) { AsRifle = asRifle; }
-    public void AUneArmeDeTypeMelee(bool asMelee) { AsMelee = asMelee; }
-    public void AUneArmeDeTypeHandGun(bool asHandGun) { AsHandGun = asHandGun; }
     public void ReceiveDialogState(bool Dialog) { OnDialog = Dialog; }
 
     void OnGUI()

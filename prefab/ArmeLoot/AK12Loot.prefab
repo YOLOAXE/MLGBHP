@@ -480,9 +480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
-  Munition: 0
-  Chargeur: 10
+  Munition: 32
+  Chargeur: 64
   MunitionMax: 32
+  canTake: 0
+  TempsTake: 0.8
 --- !u!1 &2947632056585335582
 GameObject:
   m_ObjectHideFlags: 0
