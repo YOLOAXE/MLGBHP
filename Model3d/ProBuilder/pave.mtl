@@ -1,0 +1,5 @@
+newmtl Pave
+map_Kd stone_floor_d.png
+Kd 1 1 1
+d 1
+

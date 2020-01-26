@@ -1,0 +1,19 @@
+newmtl dirt
+bump terre.jpg
+Kd 0.2830189 0.1866362 0.07342472
+d 1
+
+newmtl Grass
+map_Kd 5bd42b344f7de_thumb900.jpg
+Kd 0.3415723 0.4433962 0.1568619
+d 1
+
+newmtl sable
+Kd 0.9542277 1 0.3820755
+d 1
+
+newmtl pierrebrut
+bump pierre.jpg
+Kd 0.5377358 0.5377358 0.5377358
+d 1
+
