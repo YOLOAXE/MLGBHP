@@ -34,6 +34,7 @@ public class Arme
     public Vector3 HandAngle = new Vector3(0,0,0);
     public int IDIconTexture = 0;
     public int TypeArme = 0;
+    public int idReticule = 0;
     public bool ArmeDejaPrisParJoueur = false;
     public bool AsRifle = false, AsMelee = false, AsHandGun = false;
     public Vector3 DB = new Vector3(0, 0, 0);
@@ -75,6 +76,7 @@ public class MAManager : MonoBehaviour
     [SerializeField] private GameObject BrasGauche = null;
     [SerializeField] private GameObject BrasDroite = null;
 
+    private GameObject[] IAT = new GameObject[5];
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
     private TextMeshProUGUI AmmoTextMeshPro = null;
@@ -218,8 +220,12 @@ public class MAManager : MonoBehaviour
             UAM[i].Emplacement.GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[i].IDArme].IDIconTexture];
             UAM[i].CadreActive.SetActive(EmplacementArme == i);
             UAM[i].CadreDesactive.SetActive(EmplacementArme != i);
-        }  
-        for(i = 0; i < ArmeObject.Length;i++)
+        }
+        for (i = 0; i < IAT.Length && IAT[i] != null; i++)
+        {
+            IAT[i].GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[i].IDArme].IDIconTexture];
+        }
+        for (i = 0; i < ArmeObject.Length;i++)
         {
             ArmeObject[i].SetActive(ArmesContent[IDAE[EmplacementArme].IDArme].IDIconTexture == i);
         }
@@ -228,6 +234,7 @@ public class MAManager : MonoBehaviour
         SM.AsRifle = ArmesContent[IDAE[EmplacementArme].IDArme].AsRifle;
         SM.AsMelee = ArmesContent[IDAE[EmplacementArme].IDArme].AsMelee;
         SM.AsHandGun = ArmesContent[IDAE[EmplacementArme].IDArme].AsHandGun;
+        SendMessage("ChangeCursor", ArmesContent[IDAE[EmplacementArme].IDArme].idReticule);
     }
 
     void chercheElment()
@@ -235,6 +242,10 @@ public class MAManager : MonoBehaviour
         Chercher();
         CadreEmplacementMiseAjour();
         AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TextMeshProUGUI>();
+        for(i = 0;i < IAT.Length; i++)
+        {
+            IAT[i] = GameObject.Find("IAT_Invent_" + i.ToString());
+        }
     }
 
     void ArmeMiseAJour(int i)

@@ -49,6 +49,7 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private bool CoupParCoup = false;
     [SerializeField] private float Z = 10;
     [SerializeField] private float scale = 0.1f;
+    [SerializeField] private bool ShotParticule = false;
     [SerializeField] private GameObject SpawnBalleRay = null;
     [SerializeField] private float SpeedBulletRay = 1f;
     private RaycastHit hit;
@@ -71,12 +72,13 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private GameObject pointDapparitionBullet = null;
     [SerializeField] private float forceCasting = 200f;
     [SerializeField] private float TailleBullet = 1f;
-    [SerializeField] private Vector3 angleCasting = new Vector3(90f, 0f, 0f);
     [SerializeField] private PlayerStat statPlayer = null;
     [SerializeField] private Animator Arm_Animator = null;
+    [SerializeField] private bool Visseur = false;
     private Transform casting = null;
     public bool OnAction = false;
 
+    public bool testAim = false;
     private int i = 0,bt = 0;
     private bool ParticleLoop = false;
     private GameObject MainCamera = null;
@@ -118,7 +120,14 @@ public class ArmeShoot : MonoBehaviour
                                     Debug.DrawLine(transform.position, hit.point);
                                     if (SpawnBalleRay != null)
                                     {
-                                        StartCoroutine(Trajectoire(Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.identity), hit.point));
+                                        if (!ShotParticule)
+                                        {
+                                            StartCoroutine(Trajectoire(Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.identity), hit.point));
+                                        }
+                                        else
+                                        {
+                                            Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.Euler(MainCamera.transform.eulerAngles));
+                                        }
                                     }
                                     if (hit.rigidbody != null)
                                     {
@@ -150,10 +159,12 @@ public class ArmeShoot : MonoBehaviour
                         }
                         if (castingBullet != null)
                         {
-                            casting = Instantiate(castingBullet, pointDapparitionBullet.transform.position, Quaternion.Euler(angleCasting));
+                            casting = Instantiate(castingBullet, pointDapparitionBullet.transform.position, Quaternion.Euler(pointDapparitionBullet.transform.eulerAngles));
                             casting.localScale = new Vector3(1f,1f,1f) * TailleBullet;
-                            casting.transform.eulerAngles = pointDapparitionBullet.transform.eulerAngles;
-                            casting.GetComponent<Rigidbody>().AddForce(-pointDapparitionBullet.transform.forward * forceCasting);
+                            if (casting.GetComponent<Rigidbody>())
+                            {
+                                casting.GetComponent<Rigidbody>().AddForce(-pointDapparitionBullet.transform.forward * forceCasting);
+                            }
                         }
 
                         if (!useMana) { munition--; } else { statPlayer.ReceiveTakeMana(ConsumeMana); }
@@ -173,7 +184,7 @@ public class ArmeShoot : MonoBehaviour
             }
             else
             {
-                if (cadenceVar < 0 && cadenceVar >-9)
+                if (cadenceVar < 0 && cadenceVar >-9 || CoupParCoup)
                 {
                     Arm_Animator.SetBool("Shoot", false);
                     if (TireParticle != null && ParticleLoop) { TireParticle.Stop(); ParticleLoop = false; }
@@ -192,7 +203,7 @@ public class ArmeShoot : MonoBehaviour
             }
 
             // Animation
-            Arm_Animator.SetBool("Aim", Input.GetButton("Fire2"));
+            Arm_Animator.SetBool("Aim", Input.GetButton("Fire2") || testAim);
             Arm_Animator.SetBool("Walk", !Input.GetButton("Sprint") && (Input.GetButton("Horizontal") || Input.GetButton("Vertical")));
             Arm_Animator.SetBool("Run", Input.GetButton("Sprint") && (Input.GetButton("Horizontal") || Input.GetButton("Vertical")));
         }
