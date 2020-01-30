@@ -117,6 +117,7 @@ public class ArmeShoot : MonoBehaviour
                                 ray = new Ray(MainCamera.transform.position, direction);
                                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                                 {
+                                    StartCoroutine(MainCamera.GetComponent<ExplosionShake>().ShakeTire(2));
                                     Debug.DrawLine(transform.position, hit.point);
                                     if (SpawnBalleRay != null)
                                     {
