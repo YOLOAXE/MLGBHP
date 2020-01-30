@@ -37,6 +37,7 @@ public class Arme
     public int idReticule = 0;
     public bool ArmeDejaPrisParJoueur = false;
     public bool AsRifle = false, AsMelee = false, AsHandGun = false;
+    public bool Scope = false;
     public Vector3 DB = new Vector3(0, 0, 0);
     public Vector3 GB = new Vector3(0, 0, 0);
     public Vector3 GBRechagement = new Vector3(0, 0, 0);
@@ -80,6 +81,7 @@ public class MAManager : MonoBehaviour
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
     private TextMeshProUGUI AmmoTextMeshPro = null;
+    private bool canScope = false;
     private int i = 0;
 
     public bool OnDialog,OnInventaire;
@@ -105,6 +107,14 @@ public class MAManager : MonoBehaviour
             {
                 RemoveArmeSlot(EmplacementArme);
                 ArmeMiseAJour(EmplacementArme);
+            }
+            if(canScope && Input.GetButtonDown("Fire2"))
+            {
+                gameObject.transform.GetChild(0).SendMessage("ReceiveZoom", true);
+            }
+            if (canScope && Input.GetButtonUp("Fire2"))
+            {
+                gameObject.transform.GetChild(0).SendMessage("ReceiveZoom", false);
             }
             GetArmeInfo();
             MunitionTexte();     
@@ -235,6 +245,7 @@ public class MAManager : MonoBehaviour
         SM.AsMelee = ArmesContent[IDAE[EmplacementArme].IDArme].AsMelee;
         SM.AsHandGun = ArmesContent[IDAE[EmplacementArme].IDArme].AsHandGun;
         SendMessage("ChangeCursor", ArmesContent[IDAE[EmplacementArme].IDArme].idReticule);
+        canScope = ArmesContent[IDAE[EmplacementArme].IDArme].Scope;
     }
 
     void chercheElment()

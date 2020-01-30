@@ -128,8 +128,6 @@ MonoBehaviour:
   DistanceArret: 3.5
   Player: {fileID: 0}
   LightBoule: {fileID: 846400316}
-  Impulse: 0
-  mode: 0
 --- !u!1 &846400316
 GameObject:
   m_ObjectHideFlags: 0
