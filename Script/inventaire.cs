@@ -28,7 +28,7 @@ public class inventaire : MonoBehaviour
 	private int EtapeLoot;
 	private GameObject AntiAsiqgneSpam;
 	public bool OnDialog;
-	private GameObject Inventaire;
+	private GameObject Inventaire = null;
 	public AudioSource m_Audio;
 	public AudioClip m_Open,Close,TakeObject,Drop_sound,Use_sound,Erreur_sound;
 	private bool itemSpecial,Material;
@@ -199,7 +199,6 @@ public class inventaire : MonoBehaviour
 				PlayOneShotSound(Erreur_sound);
 			}
 			NomberImageSet();
-			Inventaire.SendMessage("SetImage");
 		}
 		if(Input.GetButtonDown("Inventaire") && (!OnDialog || OpenInventaire))
 		{
@@ -213,7 +212,6 @@ public class inventaire : MonoBehaviour
 			MenuChange();
 			NomberImageSet();
 			Inventaire.SetActive(OpenInventaire);
-			//if(OpenInventaire){Inventaire.SendMessage("SetImage");}
 		}
 		if(OpenInventaire)
 		{

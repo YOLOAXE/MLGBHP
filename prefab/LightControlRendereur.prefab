@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4e4eee694760f42be1b422ee8be091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedRate: 0.8
-  DistanceOP: 30
+  SpeedRate: 1.5
+  DistanceOP: 35
   LightControle: []

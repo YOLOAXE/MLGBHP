@@ -77,7 +77,7 @@ public class MAManager : MonoBehaviour
     [SerializeField] private GameObject BrasGauche = null;
     [SerializeField] private GameObject BrasDroite = null;
 
-    private GameObject[] IAT = new GameObject[5];
+    [SerializeField] private GameObject[] IAT = new GameObject[5];
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
     private TextMeshProUGUI AmmoTextMeshPro = null;
@@ -86,7 +86,7 @@ public class MAManager : MonoBehaviour
 
     public bool OnDialog, OnInventaire;
 
-    void Start()
+    void Awake()
     {
         chercheElment();
     }
@@ -265,7 +265,7 @@ public class MAManager : MonoBehaviour
         Chercher();
         CadreEmplacementMiseAjour();
         AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TextMeshProUGUI>();
-        for (i = 0; i < IAT.Length; i++)
+        for (i = 0; i < 5; i++)
         {
             IAT[i] = GameObject.Find("IAT_Invent_" + i.ToString());
         }
