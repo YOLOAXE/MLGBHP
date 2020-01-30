@@ -30,8 +30,8 @@ public class Arme
     public string Name = "";
     public GameObject Spawn = null;
     public GameObject ArmeInPlayer = null;
-    public Vector3 HandPos = new Vector3(0,0,0);
-    public Vector3 HandAngle = new Vector3(0,0,0);
+    public Vector3 HandPos = new Vector3(0, 0, 0);
+    public Vector3 HandAngle = new Vector3(0, 0, 0);
     public int IDIconTexture = 0;
     public int TypeArme = 0;
     public int idReticule = 0;
@@ -55,16 +55,16 @@ public class IDArmeEmplacement
 public class AudioManage
 {
     public AudioSource m_AudioSource = null;
-	public AudioClip HosterWeapon = null;
-	public AudioClip TakeWeapon = null;
-	public AudioClip pickup = null;
+    public AudioClip HosterWeapon = null;
+    public AudioClip TakeWeapon = null;
+    public AudioClip pickup = null;
 }
 public class MAManager : MonoBehaviour
 {
     [Header("Manager")]
     [SerializeField] private IDArmeEmplacement[] IDAE = new IDArmeEmplacement[5];
     [SerializeField] private Arme[] ArmesContent = null;
-    [SerializeField] private AudioManage AudioContent = null; 
+    [SerializeField] private AudioManage AudioContent = null;
     [SerializeField] private Texture[] IconArmeTexture = null;
     [SerializeField] private GameObject[] ArmeObject = null;
     [SerializeField] private int EmplacementArme = 0;
@@ -84,7 +84,7 @@ public class MAManager : MonoBehaviour
     private bool canScope = false;
     private int i = 0;
 
-    public bool OnDialog,OnInventaire;
+    public bool OnDialog, OnInventaire;
 
     void Start()
     {
@@ -93,9 +93,9 @@ public class MAManager : MonoBehaviour
 
     void Update()
     {
-        if(!OnDialog && !OnInventaire)
+        if (!OnDialog && !OnInventaire)
         {
-            for(i = 0;i < IDAE.Length; i++)
+            for (i = 0; i < IDAE.Length; i++)
             {
                 if (Input.GetButtonDown("Slot" + i.ToString()) && EmplacementArme != i)
                 {
@@ -103,12 +103,12 @@ public class MAManager : MonoBehaviour
                     ArmeMiseAJour(i);
                 }
             }
-            if(Input.GetButtonDown("Drop"))
+            if (Input.GetButtonDown("Drop"))
             {
                 RemoveArmeSlot(EmplacementArme);
                 ArmeMiseAJour(EmplacementArme);
             }
-            if(canScope && Input.GetButtonDown("Fire2"))
+            if (canScope && Input.GetButtonDown("Fire2"))
             {
                 gameObject.transform.GetChild(0).SendMessage("ReceiveZoom", true);
             }
@@ -117,7 +117,7 @@ public class MAManager : MonoBehaviour
                 gameObject.transform.GetChild(0).SendMessage("ReceiveZoom", false);
             }
             GetArmeInfo();
-            MunitionTexte();     
+            MunitionTexte();
         }
 
 
@@ -133,9 +133,9 @@ public class MAManager : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
+        if (other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
         {
-            if(!other.GetComponent<ArmeLoot_S>().canTake){return;} // si le l'object vien juste d'apparetre.
+            if (!other.GetComponent<ArmeLoot_S>().canTake) { return; } // si le l'object vien juste d'apparetre.
             ObjectTrigger = other.transform.gameObject;
             AddObjectSlot(ObjectTrigger);
         }
@@ -165,9 +165,9 @@ public class MAManager : MonoBehaviour
                 return;
             }
         }
-        for (i = 1;i < 5;i++)
+        for (i = 1; i < 5; i++)
         {
-            if(IDAE[i].IDArme < 1)// si le joueur possede un emplacement vide.
+            if (IDAE[i].IDArme < 1)// si le joueur possede un emplacement vide.
             {
                 IDAE[i].IDArme = Arme.GetComponent<ArmeLoot_S>().ID;
                 IDAE[i].Munition = Arme.GetComponent<ArmeLoot_S>().Munition;
@@ -189,21 +189,33 @@ public class MAManager : MonoBehaviour
 
     void RemoveArmeSlot(int Slot)
     {
-        if(IDAE[Slot].IDArme == 0)
+        if (IDAE[Slot].IDArme == 0)
         {
             return;
         }
-        ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(false);
-        GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, SpawnArmePoint.transform.position, Quaternion.Euler(transform.GetChild(0).eulerAngles));
-        Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
-        Arme.GetComponent<ArmeLoot_S>().Munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
-        Arme.GetComponent<ArmeLoot_S>().MunitionMax = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionMax;
-        Arme.GetComponent<ArmeLoot_S>().Chargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
-        IDAE[Slot].IDArme = 0;
-        IDAE[Slot].Munition = 0;
-        IDAE[Slot].MunitionMax = 0;
-        IDAE[Slot].Chargeur = 0;
-        Arme.GetComponent<Rigidbody>().AddForce(transform.GetChild(0).forward * ForceImpulseArme, ForceMode.Impulse);
+        RaycastHit hit;
+        Ray ray = new Ray(transform.GetChild(0).position, transform.GetChild(0).forward);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.SetActive(false);
+            GameObject Arme = (GameObject)Instantiate(ArmesContent[IDAE[Slot].IDArme].Spawn, SpawnArmePoint.transform.position, Quaternion.Euler(transform.GetChild(0).eulerAngles));
+            Arme.GetComponent<ArmeLoot_S>().ID = IDAE[Slot].IDArme;
+            Arme.GetComponent<ArmeLoot_S>().Munition = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munition;
+            Arme.GetComponent<ArmeLoot_S>().MunitionMax = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionMax;
+            Arme.GetComponent<ArmeLoot_S>().Chargeur = ArmesContent[IDAE[EmplacementArme].IDArme].ArmeInPlayer.GetComponent<ArmeShoot>().munitionChargeur;
+            IDAE[Slot].IDArme = 0;
+            IDAE[Slot].Munition = 0;
+            IDAE[Slot].MunitionMax = 0;
+            IDAE[Slot].Chargeur = 0;
+            if (hit.distance > 1.5f)
+            {
+                Arme.GetComponent<Rigidbody>().AddForce(transform.GetChild(0).forward * ForceImpulseArme, ForceMode.Impulse);
+            }
+            else
+            {
+                Arme.transform.position = transform.GetChild(0).position + new Vector3(0f, 1f, 0f);
+            }
+        }
         CadreEmplacementMiseAjour();
     }
 
@@ -215,7 +227,7 @@ public class MAManager : MonoBehaviour
 
     void Chercher()
     {
-        for(i = 0;i < UAM.Length;i++)
+        for (i = 0; i < UAM.Length; i++)
         {
             UAM[i].Emplacement = GameObject.Find("sxvfbvnry_" + i.ToString() + "_ElinT");
             UAM[i].CadreActive = GameObject.Find("sxvfbvnry_CinT_" + i.ToString());
@@ -235,7 +247,7 @@ public class MAManager : MonoBehaviour
         {
             IAT[i].GetComponent<UnityEngine.UI.RawImage>().texture = IconArmeTexture[ArmesContent[IDAE[i].IDArme].IDIconTexture];
         }
-        for (i = 0; i < ArmeObject.Length;i++)
+        for (i = 0; i < ArmeObject.Length; i++)
         {
             ArmeObject[i].SetActive(ArmesContent[IDAE[EmplacementArme].IDArme].IDIconTexture == i);
         }
@@ -253,7 +265,7 @@ public class MAManager : MonoBehaviour
         Chercher();
         CadreEmplacementMiseAjour();
         AmmoTextMeshPro = GameObject.Find("AmmoTextMeshPro").GetComponent<TextMeshProUGUI>();
-        for(i = 0;i < IAT.Length; i++)
+        for (i = 0; i < IAT.Length; i++)
         {
             IAT[i] = GameObject.Find("IAT_Invent_" + i.ToString());
         }
@@ -293,9 +305,9 @@ public class MAManager : MonoBehaviour
         {
             if (AIM.useMana)
             {
-                AmmoTextMeshPro.text = "-" + AIM.ConsumeMana.ToString() +"MP";
+                AmmoTextMeshPro.text = "-" + AIM.ConsumeMana.ToString() + "MP";
             }
-            else if(AIM.NoAmmo)
+            else if (AIM.NoAmmo)
             {
                 AmmoTextMeshPro.text = "No Ammo";
             }
@@ -304,7 +316,7 @@ public class MAManager : MonoBehaviour
                 AmmoTextMeshPro.text = AIM.munition.ToString() + " / " + AIM.munitionChargeur.ToString();
             }
         }
-        else 
+        else
         {
             AmmoTextMeshPro.text = "No Ammo";
         }
@@ -321,7 +333,7 @@ public class MAManager : MonoBehaviour
 
     void ResetBoolAnimator()
     {
-        Arm_Animator.SetBool("Inspect",false);
+        Arm_Animator.SetBool("Inspect", false);
         Arm_Animator.SetBool("Rechargement", false);
         Arm_Animator.SetBool("RechargementOutOfAmmo", false);
         Arm_Animator.SetBool("RechargementOutOfAmmo", false);
