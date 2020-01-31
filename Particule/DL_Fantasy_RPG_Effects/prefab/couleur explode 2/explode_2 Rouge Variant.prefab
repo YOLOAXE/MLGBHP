@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 5399375484122970757, guid: d157fcfc73457ea44b9a125e5be375ca,
         type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 19835186, guid: d157fcfc73457ea44b9a125e5be375ca, type: 3}
       propertyPath: InitialModule.startColor.minColor.r

@@ -117,7 +117,6 @@ public class ArmeShoot : MonoBehaviour
                                 ray = new Ray(MainCamera.transform.position, direction);
                                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerAuthoriser))
                                 {
-                                    StartCoroutine(MainCamera.GetComponent<ExplosionShake>().ShakeTire(2));
                                     Debug.DrawLine(transform.position, hit.point);
                                     if (SpawnBalleRay != null)
                                     {
@@ -127,9 +126,10 @@ public class ArmeShoot : MonoBehaviour
                                         }
                                         else
                                         {
-                                            Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.Euler(MainCamera.transform.eulerAngles));
+                                            Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.Euler(MainCamera.transform.eulerAngles)).transform.LookAt(hit.point);
                                         }
                                     }
+                                    StartCoroutine(MainCamera.GetComponent<ExplosionShake>().ShakeTire(2));
                                     if (hit.rigidbody != null)
                                     {
                                         hit.rigidbody.AddForce(ray.direction * hitForceTire);

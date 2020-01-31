@@ -635,10 +635,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 5
   Munition: 0
   Chargeur: 0
   MunitionMax: 0
+  canTake: 0
+  TempsTake: 0.8
 --- !u!1 &8483851654688785741
 GameObject:
   m_ObjectHideFlags: 0
