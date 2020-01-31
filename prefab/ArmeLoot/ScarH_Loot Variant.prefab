@@ -519,10 +519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  Munition: 0
-  Chargeur: 0
-  MunitionMax: 0
+  ID: 4
+  Munition: 64
+  Chargeur: 128
+  MunitionMax: 64
+  canTake: 0
+  TempsTake: 0.8
 --- !u!1 &5564944080453799841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1084,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: 11fc2173a6d990c4a8e2c102ca313b3d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11fc2173a6d990c4a8e2c102ca313b3d, type: 3}
 --- !u!4 &8278887088904971069 stripped
 Transform:

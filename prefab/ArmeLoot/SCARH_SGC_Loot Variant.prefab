@@ -991,10 +991,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  Munition: 0
-  Chargeur: 0
-  MunitionMax: 0
+  ID: 3
+  Munition: 32
+  Chargeur: 64
+  MunitionMax: 32
+  canTake: 0
+  TempsTake: 0.8
 --- !u!1 &4219179819951660201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1054,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1695136991898724830, guid: 11fc2173a6d990c4a8e2c102ca313b3d, type: 3}
+  - {fileID: 2100000, guid: 794c417babcf2f145a9f728f4e5182f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
