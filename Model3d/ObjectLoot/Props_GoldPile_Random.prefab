@@ -112,3 +112,5 @@ MonoBehaviour:
   takeSound: {fileID: 8300000, guid: 9c63d7c84ca8a9e43841bb891570f0e3, type: 3}
   MinR: 3
   MaxR: 20
+  spawnAddPos: {x: 0, y: 0.1, z: 0}
+  noSend: 0

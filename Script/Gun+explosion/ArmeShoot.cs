@@ -74,7 +74,8 @@ public class ArmeShoot : MonoBehaviour
     [SerializeField] private float TailleBullet = 1f;
     [SerializeField] private PlayerStat statPlayer = null;
     [SerializeField] private Animator Arm_Animator = null;
-    [SerializeField] private bool Visseur = false;
+    [SerializeField] private float ForceShake = 2f;
+    [SerializeField] private float DivideShake = 4f;
     private Transform casting = null;
     public bool OnAction = false;
 
@@ -129,7 +130,7 @@ public class ArmeShoot : MonoBehaviour
                                             Instantiate(SpawnBalleRay, pointDapparitionProjectile.transform.position, Quaternion.Euler(MainCamera.transform.eulerAngles)).transform.LookAt(hit.point);
                                         }
                                     }
-                                    StartCoroutine(MainCamera.GetComponent<ExplosionShake>().ShakeTire(2));
+                                    StartCoroutine(MainCamera.GetComponent<MouseLook>().Shake(ForceShake,DivideShake));
                                     if (hit.rigidbody != null)
                                     {
                                         hit.rigidbody.AddForce(ray.direction * hitForceTire);

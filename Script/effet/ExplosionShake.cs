@@ -25,15 +25,4 @@ public class ExplosionShake : MonoBehaviour
 		transform.localPosition = originalPos;
 	}
 
-    public IEnumerator ShakeTire(float magnitude)
-    {
-        Vector3 originalRot = transform.localEulerAngles;
-        float x = Random.Range(-1.5f, 1.5f) * magnitude;
-        float y = Random.Range(-0.5f, 0.5f) * magnitude;
-
-        transform.localEulerAngles = new Vector3(originalRot.x + x, originalRot.y + y, originalRot.z);
-        yield return null;
-        transform.localEulerAngles = originalRot;
-
-    }
 }

@@ -113,3 +113,4 @@ MonoBehaviour:
   MinR: 0
   MaxR: 0
   spawnAddPos: {x: 0, y: 0.1, z: 0}
+  noSend: 0

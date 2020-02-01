@@ -23,6 +23,8 @@ public class EnemieLambda : MonoBehaviour
 	public AudioSource m_AudioSource;
 	public AudioClip Mort;
 	public Transform[] Loot;
+    [SerializeField] private float ForceShake = 8f;
+    [SerializeField] private float DivideShake = 4f;
 
     void Start()
 	{
@@ -71,6 +73,7 @@ public class EnemieLambda : MonoBehaviour
 						if (hit.rigidbody != null){hit.rigidbody.AddForce(Vector3.up * HitForce);hit.rigidbody.AddForce(ray * HitForce);}
 					}
 					Player.SendMessage("ReceiveDamage",DegatSend);
+                    StartCoroutine(Player.transform.GetChild(0).GetComponent<MouseLook>().Shake(ForceShake,DivideShake));
 					TempsAttaqueVar = TempsAttaque;	
 				}
 			}
