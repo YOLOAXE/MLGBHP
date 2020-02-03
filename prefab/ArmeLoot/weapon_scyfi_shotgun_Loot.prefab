@@ -1189,10 +1189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 6
   Munition: 0
   Chargeur: 0
   MunitionMax: 0
+  canTake: 0
+  TempsTake: 0.8
 --- !u!1 &7210582549582665329
 GameObject:
   m_ObjectHideFlags: 0

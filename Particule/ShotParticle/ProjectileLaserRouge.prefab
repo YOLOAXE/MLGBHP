@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57303e7ad1f89da48945c4a228cefa2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 45
-  RangeTDecroit: 1
+  Range: 60
+  RangeTDecroit: 2
   MultipleP: 1
 --- !u!1 &2337888018027100898
 GameObject:
