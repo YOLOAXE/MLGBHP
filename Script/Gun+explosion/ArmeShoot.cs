@@ -40,7 +40,7 @@ public class ArmeShoot : MonoBehaviour
     public float damage = 0f;
     public bool useMana = false;
     public bool NoAmmo = false;
-    private float cadenceVar = 0;
+    [SerializeField] private float cadenceVar = 0;
     [SerializeField] private int BallePareTire = 1;
     [Header("RayCast")]
     [SerializeField] private LayerMask layerAuthoriser = 0;
@@ -186,7 +186,7 @@ public class ArmeShoot : MonoBehaviour
             }
             else
             {
-                if (cadenceVar < 0 && cadenceVar >-9 || CoupParCoup)
+                if (cadenceVar < 0 && cadenceVar >-9)
                 {
                     Arm_Animator.SetBool("Shoot", false);
                     if (TireParticle != null && ParticleLoop) { TireParticle.Stop(); ParticleLoop = false; }
@@ -194,7 +194,7 @@ public class ArmeShoot : MonoBehaviour
                 } 
             }
 
-            if (cadenceVar >= 0) { cadenceVar -= Time.deltaTime; }
+            if (cadenceVar >= 0) { cadenceVar -= Time.deltaTime; if (CoupParCoup && cadenceVar <= cadence*0.8f) { Arm_Animator.SetBool("Shoot", false); } }
 
             if (Input.GetButtonDown("Recharger") && !useMana && munitionChargeur > 0)
             {

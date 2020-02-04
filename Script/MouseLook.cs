@@ -79,15 +79,15 @@ public class MouseLook : MonoBehaviour {
         rotationX += x;
         rotationY += y;
         rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
-        transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+        //transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
 
         while (Temps < 1/Divide)
         {
             Temps += Time.deltaTime;
-            rotationX = transform.localEulerAngles.y + GetMouseX() * sensitivityX - (x * Time.deltaTime * Divide);
-            rotationY += GetMouseY() * ySens - (y * Time.deltaTime * Divide);
+            rotationX = transform.localEulerAngles.y + GetMouseX() * (sensitivityX/2) - (x * Time.deltaTime * Divide);
+            rotationY += GetMouseY() * (sensitivityY/2) - (y * Time.deltaTime * Divide);
             rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            //transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
             yield return null;
         }
     }
