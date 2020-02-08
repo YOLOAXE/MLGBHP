@@ -22,6 +22,7 @@ public class MapGenerator : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetMouseButtonDown(0)) {
+            Destroy(transform.GetChild(0).GetComponent<MeshCollider>());
 			GenerateMap();
 		}
 	}
