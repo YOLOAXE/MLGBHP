@@ -76,8 +76,11 @@ public class MAManager : MonoBehaviour
     [Header("Bras")]
     [SerializeField] private GameObject BrasGauche = null;
     [SerializeField] private GameObject BrasDroite = null;
-
     [SerializeField] private GameObject[] IAT = new GameObject[5];
+    [Header("TakeObject")]
+    [SerializeField] private GameObject takeObject = null;
+    [SerializeField] private float takeDistance = 3f;
+
     private ArmeInfoMun AIM = new ArmeInfoMun();
     private GameObject ObjectTrigger = null;
     private TextMeshProUGUI AmmoTextMeshPro = null;
@@ -116,6 +119,10 @@ public class MAManager : MonoBehaviour
             {
                 gameObject.transform.GetChild(0).SendMessage("ReceiveZoom", false);
             }
+            if(Input.GetButtonDown("Interagire"))
+            {
+                TakeObject();
+            }
             GetArmeInfo();
             MunitionTexte();
         }
@@ -135,9 +142,14 @@ public class MAManager : MonoBehaviour
     {
         if (other.tag == "ArmeLoot" && ObjectTrigger != other.transform.gameObject)
         {
-            if (!other.GetComponent<ArmeLoot_S>().canTake) { return; } // si le l'object vien juste d'apparetre.
+            if (!other.GetComponent<ArmeLoot_S>().canTake) { return; } // si l'object vien juste d'apparetre.
             ObjectTrigger = other.transform.gameObject;
             AddObjectSlot(ObjectTrigger);
+            RemoveObject();
+        }
+        if(other.tag == "Object")
+        {
+            RemoveObject();
         }
     }
 
@@ -342,6 +354,69 @@ public class MAManager : MonoBehaviour
         Arm_Animator.SetBool("Run", false);
         Arm_Animator.SetBool("Aim", false);
         Arm_Animator.SetBool("Walk", false);
+    }
+
+    void TakeObject()
+    {
+        if (takeObject != null)
+        {
+            if (takeObject.GetComponent<FixedJoint>())
+            {
+                Destroy(takeObject.GetComponent<FixedJoint>());
+            }
+            takeObject = null;
+        }
+        else
+        {
+            RaycastHit hit;
+            Ray ray = new Ray(transform.GetChild(0).position, transform.GetChild(0).forward);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (hit.transform.tag == "Object" && hit.distance <= takeDistance)
+                {
+                    takeObject = hit.transform.gameObject;
+                    takeObject.AddComponent<FixedJoint>();
+                    takeObject.GetComponent<FixedJoint>().connectedBody = transform.GetChild(0).GetComponent<Rigidbody>();
+                    takeObject.GetComponent<FixedJoint>().breakForce = 10000;
+                    takeObject.GetComponent<FixedJoint>().breakTorque = 10000;
+                    StartCoroutine(ConstanteUpdate());
+                }
+                if(hit.transform.tag == "ArmeLoot" && hit.distance <= (takeDistance + 1f))
+                {
+                    hit.transform.position = transform.position;
+                }
+            }
+        }
+    }
+
+    void RemoveObject()
+    {
+        if (takeObject != null)
+        {
+            if (takeObject.GetComponent<FixedJoint>())
+            {
+                Destroy(takeObject.GetComponent<FixedJoint>());
+            }
+            takeObject = null;
+        }
+    }
+
+    IEnumerator ConstanteUpdate()
+    {
+        bool Stop = false;
+        while (!Stop)
+        {
+            if (takeObject != null)
+            {
+                Stop = !takeObject.GetComponent<FixedJoint>();
+            }
+            else
+            {
+                Stop = true;
+            }
+            yield return new WaitForSeconds(0.1f);
+            transform.GetChild(0).transform.eulerAngles = new Vector3(transform.GetChild(0).transform.eulerAngles.x, transform.GetChild(0).transform.eulerAngles.y, transform.GetChild(0).transform.eulerAngles.z);
+        }
     }
 
     public void ReceiveDialogState(bool OD)
