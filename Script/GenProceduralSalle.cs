@@ -1,38 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GenProceduralSalle : MonoBehaviour
 {
     public int SalleMax, idThemeSalle, Palier;
-    public Transform[] salleLambdaObject_HGDB;
-    public Transform[] salleLambdaObject_B;
-    public Transform[] salleLambdaObject_G;
-    public Transform[] salleLambdaObject_GD;
-    public Transform[] salleLambdaObject_D;
-    public Transform[] salleLambdaObject_BD;
-    public Transform[] salleLambdaObject_BG;
-    public Transform[] salleLambdaObject_H;
-    public Transform[] salleLambdaObject_HB;
-    public Transform[] salleLambdaObject_HG;
-    public Transform[] salleLambdaObject_HD;
-    public Transform[] salleLambdaObject_HDG;
-    public Transform[] salleLambdaObject_HDB;
-    public Transform[] salleLambdaObject_HGB;
-    public Transform[] salleLambdaObject_DGB;
-    public Transform[] salleBossObject;
+    [SerializeField] private Transform[] salleLambdaObject_HGDB = null;
+    [SerializeField] private Transform[] salleLambdaObject_B = null;
+    [SerializeField] private Transform[] salleLambdaObject_G = null;
+    [SerializeField] private Transform[] salleLambdaObject_GD = null;
+    [SerializeField] private Transform[] salleLambdaObject_D = null;
+    [SerializeField] private Transform[] salleLambdaObject_BD = null;
+    [SerializeField] private Transform[] salleLambdaObject_BG = null;
+    [SerializeField] private Transform[] salleLambdaObject_H = null;
+    [SerializeField] private Transform[] salleLambdaObject_HB = null;
+    [SerializeField] private Transform[] salleLambdaObject_HG = null;
+    [SerializeField] private Transform[] salleLambdaObject_HD = null;
+    [SerializeField] private Transform[] salleLambdaObject_HDG = null;
+    [SerializeField] private Transform[] salleLambdaObject_HDB = null;
+    [SerializeField] private Transform[] salleLambdaObject_HGB = null;
+    [SerializeField] private Transform[] salleLambdaObject_DGB = null;
+    [SerializeField] private Transform[] salleBossObject = null;
+
+    [SerializeField] private string seed = "";
+    [SerializeField] private bool useRandomSeed = false;
+
     private int SpawnRandom, RoomRandom, ErreurHuit;
-    public GameObject[] SpawnPoint;
+    [SerializeField] private GameObject[] SpawnPoint = null;
     private bool HBool, GBool, DBool, BBool, Hblock, Gblock, Dblock, Bblock;
     private Vector3 SpawnPointPlayerPos;
-    [SerializeField]
-    private GameObject LightControl = null;
+    [SerializeField] private GameObject LightControl = null;
+    System.Random pseudoRandom;
 
     void Start()
     {
+        if (useRandomSeed)
+        {
+            seed = Time.time.ToString();
+        }
+        pseudoRandom = new System.Random(seed.GetHashCode());
         SalleMax += Palier;
         StartCoroutine(SpawnDonjon());
     }
+
     IEnumerator SpawnDonjon()
     {
         Transform ChangeInfoSpawn = Instantiate(salleLambdaObject_HGDB[idThemeSalle], gameObject.transform.position, Quaternion.identity);
@@ -45,7 +56,7 @@ public class GenProceduralSalle : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
             GameObject.FindWithTag("player").transform.position = SpawnPointPlayerPos;
             SpawnPoint = GameObject.FindGameObjectsWithTag("SpawnPoint");
-            SpawnRandom = Random.Range(0, SpawnPoint.Length);
+            SpawnRandom = pseudoRandom.Next(0, SpawnPoint.Length);
             HBool = SpawnPoint[SpawnRandom].GetComponent<SpawnSalle>().Haut;
             BBool = SpawnPoint[SpawnRandom].GetComponent<SpawnSalle>().Bas;
             GBool = SpawnPoint[SpawnRandom].GetComponent<SpawnSalle>().Gauche;
@@ -88,7 +99,7 @@ public class GenProceduralSalle : MonoBehaviour
             {
                 while (RoomRandom != 99)
                 {
-                    RoomRandom = Random.Range(0, 4);
+                    RoomRandom = pseudoRandom.Next(0, 4);
                     if (RoomRandom == 0 && !Hblock && Bblock && !Gblock && !Dblock) { Instantiate(salleLambdaObject_HGDB[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 99; }
                     if (RoomRandom == 1 && Bblock && !Dblock && ErreurHuit > 3) { Instantiate(salleLambdaObject_BD[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 99; }
                     if (RoomRandom == 2 && Bblock && !Gblock) { Instantiate(salleLambdaObject_BG[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 99; }
@@ -100,7 +111,7 @@ public class GenProceduralSalle : MonoBehaviour
             {
                 while (RoomRandom != 98)
                 {
-                    RoomRandom = Random.Range(0, 4);
+                    RoomRandom = pseudoRandom.Next(0, 4);
                     if (RoomRandom == 0 && Hblock && !Bblock && !Gblock && !Dblock) { Instantiate(salleLambdaObject_HGDB[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 98; }
                     if (RoomRandom == 1 && Hblock && !Bblock) { Instantiate(salleLambdaObject_HB[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 98; }
                     if (RoomRandom == 2 && Hblock && !Gblock && ErreurHuit > 3) { Instantiate(salleLambdaObject_HG[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 98; }
@@ -112,7 +123,7 @@ public class GenProceduralSalle : MonoBehaviour
             {
                 while (RoomRandom != 97)
                 {
-                    RoomRandom = Random.Range(0, 4);
+                    RoomRandom = pseudoRandom.Next(0, 4);
                     if (RoomRandom == 0 && !Hblock && !Bblock && !Gblock && Dblock) { Instantiate(salleLambdaObject_HGDB[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 97; }
                     if (RoomRandom == 1 && Dblock && !Hblock && ErreurHuit > 3) { Instantiate(salleLambdaObject_HD[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 97; }
                     if (RoomRandom == 2 && Dblock && !Bblock && ErreurHuit > 3) { Instantiate(salleLambdaObject_BD[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 97; }
@@ -124,7 +135,7 @@ public class GenProceduralSalle : MonoBehaviour
             {
                 while (RoomRandom != 96)
                 {
-                    RoomRandom = Random.Range(0, 4);
+                    RoomRandom = pseudoRandom.Next(0, 4);
                     if (RoomRandom == 0 && !Hblock && !Bblock && Gblock && !Dblock) { Instantiate(salleLambdaObject_HGDB[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 96; }
                     if (RoomRandom == 1 && Gblock && !Dblock) { Instantiate(salleLambdaObject_GD[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 96; }
                     if (RoomRandom == 2 && Gblock && !Bblock && ErreurHuit > 3) { Instantiate(salleLambdaObject_BG[idThemeSalle], SpawnPoint[SpawnRandom].transform.position, Quaternion.identity); RoomRandom = 96; }

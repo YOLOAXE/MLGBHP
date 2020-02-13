@@ -9,7 +9,6 @@ namespace LowPolyWater
         [SerializeField] private float waveHeight = 0.5f;
         [SerializeField] private float waveFrequency = 0.5f;
         [SerializeField] private float waveLength = 0.75f;
-        [SerializeField] private float distanceVue = 50f;
 
         private Vector3 v = new Vector3(0.0f, 0.0f, 0.0f);
         private float distance = 0f;

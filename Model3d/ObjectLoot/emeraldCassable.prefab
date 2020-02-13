@@ -155,7 +155,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &1831100488100281425
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +316,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &2269741179428318623
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +477,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &2497667787166507167
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +729,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &3470891618561015195
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +890,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &3640226406909269060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1051,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &4380533657889367320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1212,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &5438692080916427228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1373,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &6063344582217293541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1534,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &6731464608248445156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1695,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &7141828254866562932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3444584ad10d94286f998070612f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SondBrake: {fileID: 8300000, guid: 7379e8a51e53e5f45ab234b422eb6089, type: 3}
   crystaux:
   - {fileID: 3640226406909269060}
   - {fileID: 3470891618561015195}
@@ -1743,9 +1794,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1973,7 +2024,12 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0
 --- !u!1 &8836205754692824726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,4 +2185,9 @@ MonoBehaviour:
   Nombre: 1
   Special: 0
   Material: 1
+  OnStartRandomNombre: 0
   takeSound: {fileID: 8300000, guid: 2ae41e984ff1f3e4a840a1a46b6a8816, type: 3}
+  MinR: 0
+  MaxR: 0
+  spawnAddPos: {x: 0, y: 0, z: 0}
+  noSend: 0

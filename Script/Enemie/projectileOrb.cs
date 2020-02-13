@@ -8,7 +8,9 @@ public class projectileOrb : MonoBehaviour
 	public float VitesseProjectile,Degat;
 	public Transform Impact;
 	private Transform Object;
-	
+    [SerializeField] private float ForceShake = 8f;
+    [SerializeField] private float DivideShake = 4f;
+
     void Start()
     {
 		Player = GameObject.FindWithTag("player");
@@ -25,7 +27,8 @@ public class projectileOrb : MonoBehaviour
 	void OnTriggerStay(Collider other){
 		if(other.tag == "player"){
 			Player.SendMessage("ReceiveDamage",Degat);
-		}
+            StartCoroutine(Player.transform.GetChild(0).GetComponent<MouseLook>().Shake(ForceShake, DivideShake));
+        }
 		if(!(other.tag == "Enemie" || other.tag == "EnemiePierre" || other.tag == "EnemieBleu" || other.tag == "EnemieVert" || other.tag == "NoImpact")){
 		Object = Instantiate(Impact,transform.position,Quaternion.identity);
 		Destroy(gameObject);	

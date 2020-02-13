@@ -9,11 +9,16 @@ public class Zoom : MonoBehaviour
     [SerializeField] private float TimeZoom = 1;
     [SerializeField] private GameObject CacheSniper = null, DrawAlway = null;
 
-    void Awake()
+    public void ChercheScope()
     {
         CacheSniper = GameObject.Find("qiodgfjqdg_Cache");
         gameObject.GetComponent<Camera>().fieldOfView = BaseFOV;
         CacheSniper.SetActive(false);
+    }
+
+    void Awake()
+    {
+        ChercheScope();
     }
 
     public void ReceiveZoom(bool ZoomSniperR)

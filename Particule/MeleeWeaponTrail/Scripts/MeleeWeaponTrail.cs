@@ -14,10 +14,10 @@ public class MeleeWeaponTrail : MonoBehaviour
     public bool Use { set { _use = value; } }
 
     [SerializeField] private float _emitTime = 0.0f;
-    [SerializeField] private Material _material;
+    [SerializeField] private Material _material = null;
     [SerializeField] private float _lifeTime = 1.0f;
-    [SerializeField] private Color[] _colors;
-    [SerializeField] private float[] _sizes;
+    [SerializeField] private Color[] _colors = null;
+    [SerializeField] private float[] _sizes = null;
     [SerializeField] private float _minVertexDistance = 0.1f;
     [SerializeField] private float _maxVertexDistance = 10.0f;
     [SerializeField] private float _minVertexDistanceSqr = 0.0f;
@@ -29,8 +29,8 @@ public class MeleeWeaponTrail : MonoBehaviour
     [SerializeField] private int subdivisions = 4;
 #endif
 
-    [SerializeField] private Transform _base;
-    [SerializeField] private Transform _tip;
+    [SerializeField] private Transform _base = null;
+    [SerializeField] private Transform _tip = null;
 
     List<Point> _points = new List<Point>();
 #if USE_INTERPOLATION

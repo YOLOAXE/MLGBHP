@@ -6,64 +6,71 @@ using UnityEngine.UI;
 public class LightColorSpawn : MonoBehaviour
 {
     public int colorBoule;
-	public Transform[] BouleSpawn;
-	public Texture[] ImageBoule;
-	private Transform AsingneDstroy = null;
-    [SerializeField] private bool aSpawn = false,OnStartNoEnable = true,OnDestroy = false;
-	[SerializeField] private GameObject ImageARenplace = null;
-	private AudioSource m_Audio = null;
-	public AudioClip Spawn,DeSpawn;
-		
-	void Awake()
+    public Transform[] BouleSpawn;
+    public Texture[] ImageBoule;
+    private Transform AsingneDstroy = null;
+    [SerializeField] private bool aSpawn = false, OnStartNoEnable = true, OnDestroy = false;
+    [SerializeField] private GameObject ImageARenplace = null;
+    private AudioSource m_Audio = null;
+    public AudioClip Spawn, DeSpawn;
+
+    public void CE()
     {
-		ImageARenplace = GameObject.Find("ImageBouleLight_sq");
-		m_Audio = gameObject.GetComponent<AudioSource>();
-		OnStartNoEnable = false;
-		gameObject.GetComponent<LightColorSpawn>().enabled = false;
-	}	
-	void OnEnable()
+        ImageARenplace = GameObject.Find("ImageBouleLight_sq");
+        m_Audio = gameObject.GetComponent<AudioSource>();
+        OnStartNoEnable = false;
+        gameObject.GetComponent<LightColorSpawn>().enabled = false;
+    }
+
+    void Awake()
     {
-		if(!OnStartNoEnable)
+        CE();
+
+    }
+
+    void OnEnable()
+    {
+        if (!OnStartNoEnable)
         {
             SetImageBoule();
-		}
+        }
     }
     void Update()
     {
-		if(OnDestroy)
+        if (OnDestroy)
         {
-			float DistanceLight = Vector3.Distance(AsingneDstroy.position,transform.position);
-			float step =  (10 * (DistanceLight * 0.5f)) * Time.deltaTime;
-			AsingneDstroy.position = Vector3.MoveTowards(AsingneDstroy.position, transform.position, step);
-			if(DistanceLight <= 1f)
+            float DistanceLight = Vector3.Distance(AsingneDstroy.position, transform.position);
+            float step = (10 * (DistanceLight * 0.5f)) * Time.deltaTime;
+            AsingneDstroy.position = Vector3.MoveTowards(AsingneDstroy.position, transform.position, step);
+            if (DistanceLight <= 1f)
             {
-				Destroy(AsingneDstroy.gameObject);
-				PlayOneShotSound(DeSpawn);
-				OnDestroy = false;
-			}
-		}
-		if(Input.GetButtonDown("Lumierre") && !OnDestroy){aSpawn = !aSpawn;}else{return;}
-		if(aSpawn)
+                Destroy(AsingneDstroy.gameObject);
+                PlayOneShotSound(DeSpawn);
+                OnDestroy = false;
+            }
+        }
+        if (Input.GetButtonDown("Lumierre") && !OnDestroy) { aSpawn = !aSpawn; } else { return; }
+        if (aSpawn)
         {
-			AsingneDstroy = Instantiate(BouleSpawn[colorBoule],transform.position + new Vector3(0,2,0),Quaternion.Euler(0,0,0));
-			SetImageBoule();
-			PlayOneShotSound(Spawn);
-		}
+            AsingneDstroy = Instantiate(BouleSpawn[colorBoule], transform.position + new Vector3(0, 2, 0), Quaternion.Euler(0, 0, 0));
+            SetImageBoule();
+            PlayOneShotSound(Spawn);
+        }
         else
         {
-			OnDestroy = true;
-			AsingneDstroy.GetComponent<LumierrePlayer>().enabled = false;
-			AsingneDstroy.GetComponent<Rigidbody>().velocity = Vector3.zero; 
-		}
+            OnDestroy = true;
+            AsingneDstroy.GetComponent<LumierrePlayer>().enabled = false;
+            AsingneDstroy.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
 
-	void SetImageBoule()
+    void SetImageBoule()
     {
-		ImageARenplace.GetComponent<UnityEngine.UI.RawImage>().texture = ImageBoule[colorBoule];
-	}
+        ImageARenplace.GetComponent<UnityEngine.UI.RawImage>().texture = ImageBoule[colorBoule];
+    }
 
-	void PlayOneShotSound(AudioClip audioSound)
+    void PlayOneShotSound(AudioClip audioSound)
     {
-		m_Audio.clip = audioSound;m_Audio.PlayOneShot(m_Audio.clip);
-	}
+        m_Audio.clip = audioSound; m_Audio.PlayOneShot(m_Audio.clip);
+    }
 }

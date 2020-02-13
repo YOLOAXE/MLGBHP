@@ -272,7 +272,7 @@ public class MAManager : MonoBehaviour
         canScope = ArmesContent[IDAE[EmplacementArme].IDArme].Scope;
     }
 
-    void chercheElment()
+    public void chercheElment()
     {
         Chercher();
         CadreEmplacementMiseAjour();
