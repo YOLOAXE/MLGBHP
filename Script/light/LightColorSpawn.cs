@@ -25,7 +25,6 @@ public class LightColorSpawn : MonoBehaviour
     void Awake()
     {
         CE();
-
     }
 
     void OnEnable()
@@ -35,6 +34,7 @@ public class LightColorSpawn : MonoBehaviour
             SetImageBoule();
         }
     }
+
     void Update()
     {
         if (OnDestroy)
@@ -58,9 +58,12 @@ public class LightColorSpawn : MonoBehaviour
         }
         else
         {
-            OnDestroy = true;
-            AsingneDstroy.GetComponent<LumierrePlayer>().enabled = false;
-            AsingneDstroy.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (AsingneDstroy)
+            {
+                OnDestroy = true;
+                AsingneDstroy.GetComponent<LumierrePlayer>().enabled = false;
+                AsingneDstroy.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            }
         }
     }
 

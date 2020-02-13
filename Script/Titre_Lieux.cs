@@ -6,9 +6,8 @@ using TMPro;
 
 public class Titre_Lieux : MonoBehaviour
 {
-	[SerializeField]
-    private TextMeshProUGUI Texte_Titre = null;
-	public RawImage BackGround;
+	[SerializeField] private TextMeshProUGUI Texte_Titre = null;
+    [SerializeField] private RawImage BackGround = null;
 	public Slider Chargement;
 	public string Titre;
 	private float fade_a_BG,fade_a_txt;
@@ -31,6 +30,7 @@ public class Titre_Lieux : MonoBehaviour
 			Texte_Titre.text = Titre;
 		}
     }
+
 	IEnumerator EnterS()
 	{
 		fade_a_BG = 1;
@@ -41,13 +41,14 @@ public class Titre_Lieux : MonoBehaviour
 		{
 			fade_a_BG -= 0.01f;
 			fade_a_txt -= 0.025f;
-			yield return new WaitForSeconds(0.01f);
+			yield return new WaitForSeconds(0.02f);
 			BackGround.color = new Color(BackGround.color.r,BackGround.color.g,BackGround.color.b,fade_a_BG);
 			Texte_Titre.color = new Color(Texte_Titre.color.r,Texte_Titre.color.g,Texte_Titre.color.b,fade_a_txt);
 		}
 		BackGround.enabled = false;
 		Texte_Titre.enabled = false;
-	}
+    }
+
 	IEnumerator EnterDonjon()
 	{
 		fade_a_BG = 1;
@@ -71,19 +72,25 @@ public class Titre_Lieux : MonoBehaviour
 		Texte_Titre.enabled = false;
 	}
 	
-	IEnumerator ExitS()
+	public IEnumerator ExitS()
 	{
-		BackGround.enabled = true;
+        fade_a_BG = 0;
+        BackGround.enabled = true;
 		Texte_Titre.enabled = false;
-		fade_a_BG = 0;
 		BackGround.color = new Color(BackGround.color.r,BackGround.color.g,BackGround.color.b,fade_a_BG);
-		while(fade_a_BG <= 1)
+        while (fade_a_BG <= 1)
 		{
-			fade_a_BG += 0.01f;
+			fade_a_BG += 0.02f;
 			yield return new WaitForSeconds(0.01f);
 			BackGround.color = new Color(BackGround.color.r,BackGround.color.g,BackGround.color.b,fade_a_BG);
-		}
-	}
+        }
+
+        while(true)
+        {
+            yield return new WaitForSeconds(0.01f);
+            BackGround.color = new Color(BackGround.color.r, BackGround.color.g, BackGround.color.b, 1);
+        }
+    }
 
 	
 }

@@ -15,8 +15,8 @@ public class DialogueManager : MonoBehaviour {
 
 	private Queue<string> sentences;
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		sentences = new Queue<string>();
 		OnDialog = false;
 		Player = GameObject.FindWithTag("player");

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7015302874906158026}
   - component: {fileID: 7015302874906158020}
-  - component: {fileID: 2609453815496731768}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -49,15 +48,3 @@ MonoBehaviour:
     type: 3}
   lastApparitionPoint: {x: -9, y: 3, z: -82}
   testNoGetPP: 1
---- !u!114 &2609453815496731768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7015302874906158021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d139a2785f4d64198d57a3e1eb95ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

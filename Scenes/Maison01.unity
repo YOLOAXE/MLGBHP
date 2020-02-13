@@ -36031,6 +36031,8 @@ GameObject:
   - component: {fileID: 4500151166439877194}
   - component: {fileID: 5205073536119593703}
   - component: {fileID: 3992534619911508348}
+  - component: {fileID: 3992534619911508350}
+  - component: {fileID: 3992534619911508349}
   m_Layer: 0
   m_Name: door
   m_TagString: Bois
@@ -36052,6 +36054,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 5779197439840542771, guid: a40493f32dd68d94797ed8e02a9c5880, type: 3}
+--- !u!65 &3992534619911508349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3992534619911508347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009112449, y: 0.07919841, z: 0.057397433}
+  m_Center: {x: 0.0015767703, y: -0.0000000028049683, z: 0.000000027721144}
+--- !u!114 &3992534619911508350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3992534619911508347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f917c02623bfca47a2dc24c6eb1361a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetNameScene: MondeExterieur
+  posTP: {x: -24, y: 2, z: -93}
+  angleTP: {x: 0, y: 23, z: 0}
 --- !u!33 &4008211093086279603
 MeshFilter:
   m_ObjectHideFlags: 0

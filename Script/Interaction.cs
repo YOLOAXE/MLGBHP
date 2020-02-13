@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    [SerializeField]
-    private float DistanceInteractionPNJ = 3.5f;
-    [SerializeField]
-    private float DistanceInteractionCoffre = 3.5f;
+    [SerializeField] private float DistanceInteractionPNJ = 3.5f;
+    [SerializeField] private float DistanceInteractionCoffre = 3.5f;
+    [SerializeField] private float DistanceInteractionPorte = 3.5f;
     private bool OnDialog = true;
 
     void Update()
@@ -33,6 +32,13 @@ public class Interaction : MonoBehaviour
                     if (hit.distance <= DistanceInteractionCoffre)
                     {
                         hit.transform.SendMessage("Open");
+                    }
+                }
+                if (hit.transform.GetComponent<ChangeScene>())
+                {
+                    if (hit.distance <= DistanceInteractionPorte)
+                    {
+                        StartCoroutine(hit.transform.GetComponent<ChangeScene>().NextScene(gameObject));
                     }
                 }
             }

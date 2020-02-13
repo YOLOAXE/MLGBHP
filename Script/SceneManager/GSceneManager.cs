@@ -7,15 +7,10 @@ public class GSceneManager : MonoBehaviour
     [SerializeField] private GameObject joueur = null;
     [SerializeField] private GameObject objJoueur = null;
     [SerializeField] private Vector3 lastApparitionPoint = new Vector3(0f, 0f, 0f);
-    [SerializeField] private bool testNoGetPP = false;
 
     void Awake()
     {
         joueur = GameObject.FindWithTag("player");
-        if (!testNoGetPP)
-        {
-            lastApparitionPoint = GetPPLastPosition();
-        }
         if (!joueur)
         {
             DontDestroyOnLoad(Instantiate(objJoueur, lastApparitionPoint, Quaternion.Euler(0f, 0f, 0f)));
@@ -26,7 +21,7 @@ public class GSceneManager : MonoBehaviour
             joueur.SendMessage("CE");
             joueur.transform.GetChild(0).SendMessage("ChercheScope");
             joueur.SendMessage("ChercheElement");
-            joueur.transform.position = lastApparitionPoint;
+            joueur.SendMessage("ReceiveDialogState", false);
         }
     }
 
