@@ -1,6 +1,3 @@
-//
-C'est une belle journée pour se promener.
-//
 Je ne vous laisserai pas sortir à moins que vous ne tuiez le [Roi Morburn], je vous attends.
 //
 Vous devez avoir au moins le niveau {1} pour pouvoir participer.
@@ -21,8 +18,6 @@ Bienvenue dans mon magasin, êtes-vous intéressé par un article?
 //
 J'ai toutes sortes d'équipements pour les débutants.
 //
-Vous avez l'air épuisé,tener quelques potions.
-//
 Avec mon frère, nous avons construit ce magasin il y a plusieurs années et, à ce jour, nous sommes les meilleurs en termes de qualité de santé en termes de potions.
 //
 Je peux encore sentir l'énergie jaillir du sol, ce sera une coïncidence ou nous serons en présence de cette vieille lumière; Meh, tant que mon magasin ne ferme pas, je serai heureux.
@@ -30,12 +25,7 @@ Je peux encore sentir l'énergie jaillir du sol, ce sera une coïncidence ou nous 
 Bon moment pour la récolte est bonne, Je ferai du bon pain avec ce blé.
 //
 Tout le monde peut cuisiner, même un combattant comme vous.
-//
-Ces foutus Gobelin n'arrêtent pas de voler ma marchandise, je ne peux pas vendre ici, ils prendront tout dès que j'aurait le dos torune.
-//
-Je t'ai vu en chasser, il semble que tu sois bon au combatent, pourrais-tu m'aider à les effrayer?
-//
-Apparemment, le petit prenom a des Potions intéressantes.
+
 //
 Je suis fier des progrès que vous faites, vous vous efforcez d'apprendre tout ce dont vous avez besoin pour survivre 
 //
@@ -43,7 +33,7 @@ Félicitations! Maintenant vous êtes prêt à explorer l'arbre mere, pensez toujour
 //
 Tu devrais aller voir Lerud, il te posait des questions récemment et il a sûrement quelque chose à t'apprendre. 
 //
-Connaissez-vous mon frère? Il a sa ferme à Rarement, c'est un bon gars.
+
 //
 Je suis ici pour vendre les plus grosses pierres précieuses de ce côté du continent, si vous apportez un bon butin de crânes dans votre poche, je suis sûr que vous pouvez en tire un bon prix.
 //
@@ -53,9 +43,7 @@ Avez-vous déjà commencé votre entraînement paresseux?, J'ai une mission qui peut
 //
 Ivania vous soignera en échange de quelques pièces, Je suis un expert en guérison et j'ai pu guérir même les morts-vivants. Que puis-je faire pour vous?
 //
-Intéressé par l'équipement d'un chasseur?, J'ai tout l'équipement nécessaire pour aller à la chasse et à un prix équitable
-//
-Il y a plusieurs décennies, il y avait plus d'espèces de Gumbys , mais avec le temps ils migraient vers d'autres continents, on sait peu de choses aujourd'hui des Gumbet, qui étaient faits d'un métal plus dur que l'acier. | Le continent le plus proche et dont nous avons plus d'informations est Garuden, plusieurs villes détruites par l'Alpha Dragon sont en cours de reconstruction. | Les Groukkun sont les sages du continent Garuden, ils se sont levés pour la première fois après l'attaque de Garuden. | La monnaie officielle de Dragonia est Calaveras, et bien qu'ils portent ce nom, aucun vestige facile n'est utilisé pour leur création. | La première ville que les humains ont créée à Dragonia était Esia, entre les mains du guerrier Arhelion et du mystérieux sorcier Valafar.Ce vieux chêne conserve toujours la connaissance la plus importante de Rarement, si vous voulez savoir quelque chose, allez me voir
+ Le continent le plus proche et dont nous avons plus d'informations est Garuden, plusieurs villes détruites par l'Alpha Dragon sont en cours de reconstruction. | Les Groukkun sont les sages du continent Garuden, ils se sont levés pour la première fois après l'attaque de Garuden. | La monnaie officielle de Dragonia est Calaveras, et bien qu'ils portent ce nom, aucun vestige facile n'est utilisé pour leur création. | La première ville que les humains ont créée à Dragonia était Esia, entre les mains du guerrier Arhelion et du mystérieux sorcier Valafar.Ce vieux chêne conserve toujours la connaissance la plus importante de Rarement, si vous voulez savoir quelque chose, allez me voir
 //
 Si tu veux commencer une mission tu dois me montrer tes connaissances. 
 //
@@ -66,26 +54,19 @@ Je vois que vous vous levez tôt pour vous entraîner, cela semble être une bonne 
 J'ai beaucoup aimé votre enfant enthousiaste, je pense qu'il est temps pour vous de vous forger votre propre chemin, mais d'abord, je dois vous donner Une dernière formation,
 //
 je veux que vous soyez prêt à tout.
-//
-Que voulez-vous ici, étranger?
-//
+
 Vous n'avez pas les crocs pour hanter un endroit comme celui-ci .?
-//
-Nous devons nous dépêcher d'obtenir la permission d'Esia
 //
 une longue attente pour nous voyage à faire - j | 1 | Vous partez?, et que mon petit-fils voulait jouer avec vous, il est toujours excité quand il voit une @classe, quand il grandit, il veut être comme vous au lieu de s'armer de poignards
 //
 Vous partez neveu?, N'oubliez pas votre manteau, la température de l'île est plus chaude que la normale.
 //
-cette viande de lapin perd de plus en plus sa saveur d'origine, que s'est-il passé 
-//
 je n'en ai qu'une de plus pour vous , probablement le dernier parce que j'ai découvert que vous allez faire le 3e croisement. Les potions sont d'une importance vitale et vous ne devriez pas vous promener sans les avoir dans votre inventaire.
 //
-Je vous offre les meilleures potions, recommandées par tous les loups du camp. J'ai vu votre père près du faucon, il était sûr de faire un voyage en Esie. Si vous voulez restaurer votre santé, vous avez atteint le bon endroit. | Votre père m'a dit beaucoup de choses sur vous, si vous vous efforcez, vous serez une formidable
+J'ai vu votre père près du faucon, il était sûr de faire un voyage en Esie. Si vous voulez restaurer votre santé, vous avez atteint le bon endroit. | Votre père m'a dit beaucoup de choses sur vous, si vous vous efforcez, vous serez une formidable
 //
 @classe comme lui. N'oubliez pas d'apporter des potions, elles vous seront utiles dans toutes les situations.I Il semble qu'il n'y ait rien de ce côté de la poupée
 //
-essayez dans une autre direction.J Vous devriez vérifier le bonhomme de neige à gauche, il a l'air très suspect ?
 //
 C'est la bonne! Vous avez trouvé. ? Êtes-vous le fils de Dreamner? Vous avez l'air très faible, vous devriez utiliser l'épée que vous portez un peu plus. J'imagine que vous cherchez Jakuro, il doit être paresseusement quelque part.
 //

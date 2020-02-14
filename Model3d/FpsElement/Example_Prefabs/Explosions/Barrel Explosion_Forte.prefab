@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -116,7 +116,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 3
-      minScalar: 1
+      minScalar: 1.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -169,7 +169,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 35
-      minScalar: 15
+      minScalar: 22
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.15
-      minScalar: 0.05
+      scalar: 0.25
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -600,7 +600,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 3000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 40.08935
+    angle: 45
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -976,7 +976,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 20
-        minScalar: 10
+        minScalar: 20
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -2571,7 +2571,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4850,7 +4850,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4677239624580292566}
   serializedVersion: 6
-  lengthInSec: 2
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -4858,7 +4858,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4926,7 +4926,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 3
-      minScalar: 1
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4978,8 +4978,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 35
-      minScalar: 10
+      scalar: 45
+      minScalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5094,8 +5094,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.05
+      scalar: 0.3
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5410,7 +5410,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 2000
+    maxNumParticles: 4000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5470,7 +5470,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 62.647945
+    angle: 70
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -5786,7 +5786,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 100
-        minScalar: 50
+        minScalar: 100
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -7494,7 +7494,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 2.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9600,7 +9600,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -9668,7 +9668,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9736,7 +9736,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 5
-      minScalar: 2
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9904,8 +9904,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
-      minScalar: 2
+      scalar: 10
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10220,7 +10220,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 1000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -10280,7 +10280,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 35
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -13604,7 +13604,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14453,7 +14453,7 @@ ParticleSystemRenderer:
   m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 1
   m_LengthScale: 5
@@ -14502,7 +14502,7 @@ Transform:
   m_GameObject: {fileID: 4677758642333280932}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -43.045494, y: 1, z: 79.78135}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4683388327534034482}
   - {fileID: 4675049991897521070}
@@ -14716,7 +14716,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.51825553, b: 0.30147058, a: 1}
   m_Intensity: 1
-  m_Range: 4
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -14804,7 +14804,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4677917840101382116}
   serializedVersion: 6
-  lengthInSec: 0.3
+  lengthInSec: 0.4
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
@@ -14812,7 +14812,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14879,7 +14879,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -15048,7 +15048,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -15346,7 +15346,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 200
+    maxNumParticles: 400
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -19536,7 +19536,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -19604,7 +19604,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -19672,7 +19672,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1.5
-      minScalar: 0.25
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19725,7 +19725,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 150
-      minScalar: 1
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19840,8 +19840,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 9
-      minScalar: 6
+      scalar: 14
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -20156,7 +20156,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 1000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -20216,7 +20216,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 15
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -20532,7 +20532,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 50
-        minScalar: 25
+        minScalar: 35
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -20857,7 +20857,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.43633232
+      scalar: 0.5235988
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -22127,7 +22127,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -23497,7 +23497,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.85
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -23547,7 +23547,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0.3
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
@@ -24346,7 +24346,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0.2
   m_LengthScale: 2
@@ -24414,7 +24414,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -24650,8 +24650,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6
-      minScalar: 3
+      scalar: 12
+      minScalar: 6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29247,26 +29247,6 @@ PrefabInstance:
       propertyPath: explosionForce
       value: 1000
       objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -29287,9 +29267,21 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 19800012, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
-      propertyPath: playOnAwake
-      value: 0
+    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19800012, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
