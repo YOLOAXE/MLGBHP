@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482076298288659459}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 10.110026, y: 1.565, z: -92.16449}
   m_LocalScale: {x: 0.25, y: 0.25000012, z: 0.25000012}
   m_Children:
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Munition: 0
-  LootRenderer: {fileID: 0}
+  LootRenderer: {fileID: 2355528807911917500}
   ScriptVar: {fileID: 999295673194115051}
 --- !u!114 &999295673194115051
 MonoBehaviour:
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da942c077c87af031bc2a49727dc0574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 9
   Munition: 0
   Chargeur: 0
   MunitionMax: 0
@@ -139,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2355528807911917500}
   m_LocalRotation: {x: 0.49999994, y: 0.5000002, z: -0.50000006, w: -0.49999988}
-  m_LocalPosition: {x: -2.351078, y: 2.6482534, z: -0.24196924}
+  m_LocalPosition: {x: -2.351078, y: 0, z: -0.24196924}
   m_LocalScale: {x: 17.93851, y: 17.938509, z: 18.795498}
   m_Children: []
   m_Father: {fileID: 2506883567499578896}
@@ -1153,7 +1153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6224360742097398700}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.32160568, y: 2.5642388, z: -0.28715718}
+  m_LocalPosition: {x: 0.32160568, y: 0, z: -0.28715718}
   m_LocalScale: {x: 14.240171, y: 14.240177, z: 14.240177}
   m_Children: []
   m_Father: {fileID: 2506883567499578896}

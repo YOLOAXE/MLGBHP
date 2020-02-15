@@ -8,10 +8,13 @@ public class ChangeScene : MonoBehaviour
     [SerializeField] private string targetNameScene = "";
     [SerializeField] private Vector3 posTP = new Vector3(0f, 0f, 0f);
     [SerializeField] private Vector3 angleTP = new Vector3(0f, 0f, 0f);
+    [SerializeField] private AudioSource bAudio = null;
+    [SerializeField] private AudioClip OpenDoor = null;
+    private bool loadScene = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "player")
+        if (other.tag == "player" && !loadScene)
         {
             StartCoroutine(NextScene(other.gameObject));
         }
@@ -19,11 +22,20 @@ public class ChangeScene : MonoBehaviour
 
     public IEnumerator NextScene(GameObject player)
     {
-        StartCoroutine(GameObject.Find("Titre_lieux").GetComponent<Titre_Lieux>().ExitS());
-        yield return new WaitForSeconds(2f);
-        player.SendMessage("ReceiveDialogState", true);
-        player.transform.position = posTP;
-        player.transform.GetChild(0).transform.eulerAngles = angleTP;
-        SceneManager.LoadScene(targetNameScene);
+        if (!loadScene)
+        {
+            if (OpenDoor != null)
+            {
+                bAudio.clip = OpenDoor;
+                bAudio.PlayOneShot(bAudio.clip);
+            }
+            loadScene = true;
+            StartCoroutine(GameObject.Find("Titre_lieux").GetComponent<Titre_Lieux>().ExitS());
+            yield return new WaitForSeconds(2f);
+            player.SendMessage("ReceiveDialogState", true);
+            player.transform.position = posTP;
+            player.transform.GetChild(0).transform.eulerAngles = angleTP;
+            SceneManager.LoadScene(targetNameScene);
+        }
     }
 }

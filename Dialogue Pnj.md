@@ -41,8 +41,6 @@ J'ai vécu de nombreuses années dans cette forêt et je n'ai jamais parlé à un hum
 //
 Avez-vous déjà commencé votre entraînement paresseux?, J'ai une mission qui peut vous aider à affiner cet objectif.
 //
-Ivania vous soignera en échange de quelques pièces, Je suis un expert en guérison et j'ai pu guérir même les morts-vivants. Que puis-je faire pour vous?
-//
  Le continent le plus proche et dont nous avons plus d'informations est Garuden, plusieurs villes détruites par l'Alpha Dragon sont en cours de reconstruction. | Les Groukkun sont les sages du continent Garuden, ils se sont levés pour la première fois après l'attaque de Garuden. | La monnaie officielle de Dragonia est Calaveras, et bien qu'ils portent ce nom, aucun vestige facile n'est utilisé pour leur création. | La première ville que les humains ont créée à Dragonia était Esia, entre les mains du guerrier Arhelion et du mystérieux sorcier Valafar.Ce vieux chêne conserve toujours la connaissance la plus importante de Rarement, si vous voulez savoir quelque chose, allez me voir
 //
 Si tu veux commencer une mission tu dois me montrer tes connaissances. 
