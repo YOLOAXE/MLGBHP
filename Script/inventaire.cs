@@ -121,6 +121,7 @@ public class inventaire : MonoBehaviour
             {
                 PlayOneShotSound(Erreur_sound);
             }
+            NomberImageSet();
         }
         if (Input.GetButtonDown("Favori2"))
         {
@@ -139,12 +140,13 @@ public class inventaire : MonoBehaviour
             {
                 PlayOneShotSound(Erreur_sound);
             }
+            NomberImageSet();
         }
         if (Input.GetButtonDown("Interagire") && OpenInventaire && lastIDSelected != -1 && !selectedID)
         {
             if (lastIDSelected >= 0 && lastIDSelected <= 12 && InfoItem[EmplacementID[lastIDSelected]].Use)
             {
-                Debug.Log("UseItem" + EmplacementID[lastIDSelected]);
+                //Debug.Log("UseItem" + EmplacementID[lastIDSelected]);
                 InfoItem[EmplacementID[lastIDSelected]].ScriptUse.SendMessage("UseItem" + EmplacementID[lastIDSelected].ToString());
                 EmplacementNombreObject[lastIDSelected]--;
                 if (EmplacementNombreObject[lastIDSelected] == 0)

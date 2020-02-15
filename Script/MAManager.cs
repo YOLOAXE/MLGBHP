@@ -151,6 +151,10 @@ public class MAManager : MonoBehaviour
         {
             RemoveObject();
         }
+        if (other.tag == "MunitionLoot")
+        {
+            Debug.Log("loot");
+        }
     }
 
     void AddObjectSlot(GameObject Arme)

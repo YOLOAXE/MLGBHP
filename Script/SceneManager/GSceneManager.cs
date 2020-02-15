@@ -7,6 +7,8 @@ public class GSceneManager : MonoBehaviour
     [SerializeField] private GameObject joueur = null;
     [SerializeField] private GameObject objJoueur = null;
     [SerializeField] private Vector3 lastApparitionPoint = new Vector3(0f, 0f, 0f);
+    [SerializeField] private AudioSource bAudio = null;
+    [SerializeField] private AudioClip CloseDoor = null;
 
     void Awake()
     {
@@ -22,6 +24,12 @@ public class GSceneManager : MonoBehaviour
             joueur.transform.GetChild(0).SendMessage("ChercheScope");
             joueur.SendMessage("ChercheElement");
             joueur.SendMessage("ReceiveDialogState", false);
+        }
+        if (PlayerPrefs.GetInt("CloseSound", 0) == 1)
+        {
+            PlayerPrefs.SetInt("CloseSound", 0);
+            bAudio.clip = CloseDoor;
+            bAudio.PlayOneShot(bAudio.clip);
         }
     }
 

@@ -24,10 +24,11 @@ public class ChangeScene : MonoBehaviour
     {
         if (!loadScene)
         {
-            if (OpenDoor != null)
+            if (bAudio != null)
             {
                 bAudio.clip = OpenDoor;
                 bAudio.PlayOneShot(bAudio.clip);
+                PlayerPrefs.SetInt("CloseSound",1);
             }
             loadScene = true;
             StartCoroutine(GameObject.Find("Titre_lieux").GetComponent<Titre_Lieux>().ExitS());

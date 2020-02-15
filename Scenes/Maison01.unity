@@ -958,6 +958,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
       objectReference: {fileID: 0}
+    - target: {fileID: 2744566705872601219, guid: eba0d054f8e22bc42ac13917841e43b1,
+        type: 3}
+      propertyPath: Titre
+      value: Maison du Sorcier
+      objectReference: {fileID: 0}
     - target: {fileID: 5644126474690558128, guid: eba0d054f8e22bc42ac13917841e43b1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1487,21 +1492,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015302874906158020, guid: f1552eeb4f2337c448028bac737d7f43,
-        type: 3}
-      propertyPath: lastApparitionPoint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015302874906158020, guid: f1552eeb4f2337c448028bac737d7f43,
-        type: 3}
-      propertyPath: lastApparitionPoint.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015302874906158020, guid: f1552eeb4f2337c448028bac737d7f43,
-        type: 3}
-      propertyPath: lastApparitionPoint.z
-      value: -12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1552eeb4f2337c448028bac737d7f43, type: 3}
